@@ -14,8 +14,9 @@
 namespace BillyEngine
 {
     //The game loop
-    struct GameData
+    class GameData
     {
+    public:
         GameData();
         ~GameData();
 

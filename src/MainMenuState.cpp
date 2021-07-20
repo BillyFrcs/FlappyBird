@@ -14,9 +14,9 @@ BillyEngine::MainMenuState::~MainMenuState()
 
 void BillyEngine::MainMenuState::Init()
 {
-     _gameData->assets.loadTexture("Main Menu Background", MAIN_MENU_BACKGROUND_FILEPATH);
-     _gameData->assets.loadTexture("Title Game", GAME_TITLE_FILEPATH);
-     _gameData->assets.loadTexture("Play Button Game", PLAY_BUTTON_GAME_FILEPATH);
+     _gameData->assets.loadTexture("Main Menu Background", MAIN_MENU_BACKGROUND_PATH);
+     _gameData->assets.loadTexture("Title Game", GAME_TITLE_PATH);
+     _gameData->assets.loadTexture("Play Button Game", PLAY_BUTTON_GAME_PATH);
 
      _background.setTexture(this->_gameData->assets.getTexture("Main Menu Background"));
      _title.setTexture(this->_gameData->assets.getTexture("Title Game"));

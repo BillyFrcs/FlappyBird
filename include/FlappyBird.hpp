@@ -9,11 +9,14 @@ enum Screen
      SCREEN_HEIGHT = 1024
 };
 
+/*
+ * Didn't using splash time at this moment.
 #define SPLASH_STATE_TIME 3.0
+*/
 
 // Flappy bird definition to load assets from file path
-#define SPLASH_BACKGROUND_FILEPATH "assets/SplashState/res/Splash-Background.png"
-#define MAIN_MENU_BACKGROUND_FILEPATH "assets/SplashState/res/FlappySky.png"
+#define SPLASH_BACKGROUND_PATH "assets/SplashState/res/FlappySky.png"
+#define MAIN_MENU_BACKGROUND_PATH "assets/SplashState/res/FlappySky.png"
 
-#define GAME_TITLE_FILEPATH "assets/SplashState/res/title.png"
-#define PLAY_BUTTON_GAME_FILEPATH "assets/SplashState/res/PlayButton.png"
+#define GAME_TITLE_PATH "assets/SplashState/res/title.png"
+#define PLAY_BUTTON_GAME_PATH "assets/SplashState/res/PlayButton.png"

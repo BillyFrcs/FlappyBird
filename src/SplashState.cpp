@@ -15,7 +15,9 @@ BillyEngine::SplashState::~SplashState()
 
 void BillyEngine::SplashState::Init()
 {
-     _gameData->assets.loadTexture("Splash State Background", SPLASH_BACKGROUND_FILEPATH);
+     _gameData->assets.loadTexture("Splash State Background", MAIN_MENU_BACKGROUND_PATH);
+
+     // This method is use for showing the splash background
      _background.setTexture(this->_gameData->assets.getTexture("Splash State Background"));
 }
 
@@ -34,12 +36,14 @@ void BillyEngine::SplashState::HandleInput()
 
 void BillyEngine::SplashState::Update(float deltaType)
 {
+     /* Didn't using this splash screen for now.
      if (_clock.getElapsedTime().asSeconds() > SPLASH_STATE_TIME)
      {
-          //Switch to main menu
-          _gameData->machine.addState(StatePtr(new MainMenuState(_gameData)), true);
-          //std::cout << "Go To Main Menu\n";
+          // Switch to main menu
+          std::cout << "Go To Main Menu\n";
      }
+     */
+     _gameData->machine.addState(StatePtr(new MainMenuState(_gameData)), true);
 }
 
 void BillyEngine::SplashState::Draw(float deltaType)
