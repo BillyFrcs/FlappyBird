@@ -2,6 +2,7 @@
 #include <sstream>
 
 #include "FlappyBird.hpp"
+#include "GameState.hpp"
 #include "MainMenuState.hpp"
 
 BillyEngine::MainMenuState::MainMenuState(GameDataPtr gameData) : _gameData(gameData)
@@ -14,7 +15,7 @@ BillyEngine::MainMenuState::~MainMenuState()
 
 void BillyEngine::MainMenuState::Init()
 {
-     _gameData->assets.loadTexture("Main Menu Background", MAIN_MENU_BACKGROUND_PATH);
+     _gameData->assets.loadTexture("Main Menu Background", GAME_BACKGROUND_PATH);
      _gameData->assets.loadTexture("Title Game", GAME_TITLE_PATH);
      _gameData->assets.loadTexture("Play Button Game", PLAY_BUTTON_GAME_PATH);
 
@@ -40,7 +41,8 @@ void BillyEngine::MainMenuState::HandleInput()
 
           if (_gameData->input.isSpriteClicked(_playButton, sf::Mouse::Left, _gameData->window))
           {
-               std::cout << "Go To Game Screen\n";
+               _gameData->machine.addState(StatePtr(new GameState(this->_gameData)));
+               //std::cout << "Go To Game Screen\n";
           }
      }
 }
