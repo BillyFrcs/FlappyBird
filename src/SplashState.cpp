@@ -34,7 +34,7 @@ void BillyEngine::SplashState::HandleInput()
      }
 }
 
-void BillyEngine::SplashState::Update(float deltaType)
+void BillyEngine::SplashState::Update(float deltaTime)
 {
      /* 
       * Didn't using this splash screen for now.
@@ -48,7 +48,7 @@ void BillyEngine::SplashState::Update(float deltaType)
      _gameData->machine.addState(StatePtr(new MainMenuState(_gameData)), true);
 }
 
-void BillyEngine::SplashState::Draw(float deltaType)
+void BillyEngine::SplashState::Draw(float deltaTime)
 {
      _gameData->window.clear();
 
