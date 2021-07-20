@@ -15,7 +15,7 @@ BillyEngine::SplashState::~SplashState()
 
 void BillyEngine::SplashState::Init()
 {
-     _gameData->assets.loadTexture("Splash State Background", MAIN_MENU_BACKGROUND_PATH);
+     _gameData->assets.loadTexture("Splash State Background", SPLASH_BACKGROUND_PATH);
 
      // This method is use for showing the splash background
      _background.setTexture(this->_gameData->assets.getTexture("Splash State Background"));
