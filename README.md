@@ -1,4 +1,4 @@
-# Snake Game
+# Flappy Bird
 
 Flappy Bird game with C++/SFML library, running on linux.
 
