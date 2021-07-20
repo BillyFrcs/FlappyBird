@@ -36,13 +36,15 @@ void BillyEngine::SplashState::HandleInput()
 
 void BillyEngine::SplashState::Update(float deltaType)
 {
-     /* Didn't using this splash screen for now.
+     /* 
+      * Didn't using this splash screen for now.
      if (_clock.getElapsedTime().asSeconds() > SPLASH_STATE_TIME)
      {
           // Switch to main menu
           std::cout << "Go To Main Menu\n";
      }
      */
+
      _gameData->machine.addState(StatePtr(new MainMenuState(_gameData)), true);
 }
 
