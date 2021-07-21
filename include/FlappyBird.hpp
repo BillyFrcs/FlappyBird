@@ -25,3 +25,5 @@ enum Screen
 
 #define PIPE_UP_FILEPATH "assets/SplashState/res/PipeUp.png"
 #define PIPE_DOWN_FILEPATH "assets/SplashState/res/PipeDown.png"
+
+#define PIPE_MOVEMENT_SPEED 200.0f

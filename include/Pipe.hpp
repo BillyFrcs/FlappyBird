@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 
+#include "FlappyBird.hpp"
 #include "Game.hpp"
 #include "State.hpp"
 
@@ -14,6 +15,10 @@ namespace BillyEngine
         Pipe(GameDataPtr gameData);
         ~Pipe();
 
+        void SpawnBottomPipe();
+        void SpawnTopPipe();
+        void SpawnInvisiblePipe();
+        void MovePipes(float deltaTime);
         void DrawPipes();
 
     private:

@@ -31,11 +31,19 @@ void BillyEngine::GameState::HandleInput()
           {
                _gameData->window.close();
           }
+
+          if (_gameData->input.IsSpriteClicked(_background, sf::Mouse::Left, _gameData->window))
+          {
+               _pipePtr->SpawnInvisiblePipe();
+               _pipePtr->SpawnBottomPipe();
+               _pipePtr->SpawnTopPipe();
+          }
      }
 }
 
 void BillyEngine::GameState::Update(float deltaTime)
 {
+     _pipePtr->MovePipes(deltaTime);
 }
 
 void BillyEngine::GameState::Draw(float deltaTime)
