@@ -26,6 +26,10 @@ sudo apt-get install libsfml-dev
 
 This game in still development, so you can't play it now, but you can still see the game in action.
 
+## Simple Docs
+
+Just for information, the main cpp file is FlappyBird.cpp is used to create and run the game.
+
 > Note: This game only available and running on Linux :)
 
 <i>© Billy Franscois</i>
