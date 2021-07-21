@@ -22,3 +22,6 @@ enum Screen
 
 #define GAME_TITLE_PATH "assets/SplashState/res/title.png"
 #define PLAY_BUTTON_GAME_PATH "assets/SplashState/res/PlayButton.png"
+
+#define PIPE_UP_FILEPATH "assets/SplashState/res/PipeUp.png"
+#define PIPE_DOWN_FILEPATH "assets/SplashState/res/PipeDown.png"

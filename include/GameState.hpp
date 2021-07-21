@@ -4,6 +4,7 @@
 #include <SFML/Graphics/Sprite.hpp>
 
 #include "Game.hpp"
+#include "Pipe.hpp"
 #include "State.hpp"
 
 namespace BillyEngine
@@ -23,5 +24,7 @@ namespace BillyEngine
         GameDataPtr _gameData;
 
         sf::Sprite _background;
+
+        Pipe *_pipePtr;
     };
 }

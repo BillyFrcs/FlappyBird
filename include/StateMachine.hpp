@@ -16,12 +16,12 @@ namespace BillyEngine
         ~StateMachine();
 
         // States machine methods
-        void addState(StatePtr newStatePtr, bool isReplacing = true);
-        void removeState();
+        void AddState(StatePtr newStatePtr, bool isReplacing = true);
+        void RemoveState();
 
-        void processStateChanges();
+        void ProcessStateChanges();
 
-        StatePtr &getActiveState()
+        StatePtr &GetActiveState()
         {
             return this->_states.top();
         }

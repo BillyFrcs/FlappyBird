@@ -12,8 +12,8 @@ BillyEngine::GameOverState::~GameOverState()
 
 void BillyEngine::GameOverState::Init()
 {
-     _gameData->assets.loadTexture("Game Over Background", GAME_OVER_BACKGROUND_PATH);
-     _background.setTexture(this->_gameData->assets.getTexture("Game Over Background"));
+     _gameData->assets.LoadTexture("Game Over Background", GAME_OVER_BACKGROUND_PATH);
+     _background.setTexture(this->_gameData->assets.GetTexture("Game Over Background"));
 }
 
 void BillyEngine::GameOverState::HandleInput()

@@ -9,7 +9,7 @@ BillyEngine::AssetsManager::~AssetsManager()
 }
 
 // Load texture
-void BillyEngine::AssetsManager::loadTexture(std::string name, std::string fileName)
+void BillyEngine::AssetsManager::LoadTexture(std::string name, std::string fileName)
 {
      sf::Texture texture;
 
@@ -19,13 +19,13 @@ void BillyEngine::AssetsManager::loadTexture(std::string name, std::string fileN
      }
 }
 
-sf::Texture &BillyEngine::AssetsManager::getTexture(std::string name)
+sf::Texture &BillyEngine::AssetsManager::GetTexture(std::string name)
 {
      return this->_textures.at(name);
 }
 
 // Load fonts
-void BillyEngine::AssetsManager::loadFont(std::string name, std::string fileName)
+void BillyEngine::AssetsManager::LoadFont(std::string name, std::string fileName)
 {
      sf::Font font;
 
@@ -35,7 +35,7 @@ void BillyEngine::AssetsManager::loadFont(std::string name, std::string fileName
      }
 }
 
-sf::Font &BillyEngine::AssetsManager::getFont(std::string name)
+sf::Font &BillyEngine::AssetsManager::GetFont(std::string name)
 {
      return this->_fonts.at(name);
 }

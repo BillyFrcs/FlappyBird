@@ -14,7 +14,7 @@ BillyEngine::GameData::~GameData()
 BillyEngine::Game::Game(int width, int height, std::string title)
 {
      _gameData->window.create(sf::VideoMode(width, height), title, sf::Style::Close | sf::Style::Titlebar);
-     _gameData->machine.addState(StatePtr(new SplashState(this->_gameData)));
+     _gameData->machine.AddState(StatePtr(new SplashState(this->_gameData)));
 
      this->RunGame();
 }
@@ -33,7 +33,7 @@ void BillyEngine::Game::RunGame()
 
      while (this->_gameData->window.isOpen())
      {
-          this->_gameData->machine.processStateChanges();
+          this->_gameData->machine.ProcessStateChanges();
 
           newTime = this->_clock.getElapsedTime().asSeconds();
 
@@ -49,13 +49,13 @@ void BillyEngine::Game::RunGame()
 
           while (accumulator >= _deltaTime)
           {
-               this->_gameData->machine.getActiveState()->HandleInput();
-               this->_gameData->machine.getActiveState()->Update(_deltaTime);
+               this->_gameData->machine.GetActiveState()->HandleInput();
+               this->_gameData->machine.GetActiveState()->Update(_deltaTime);
 
                accumulator -= _deltaTime;
           }
 
           interpolation = (accumulator / _deltaTime);
-          this->_gameData->machine.getActiveState()->Draw(interpolation);
+          this->_gameData->machine.GetActiveState()->Draw(interpolation);
      }
 }

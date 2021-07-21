@@ -15,10 +15,10 @@ BillyEngine::SplashState::~SplashState()
 
 void BillyEngine::SplashState::Init()
 {
-     _gameData->assets.loadTexture("Splash State Background", SPLASH_BACKGROUND_PATH);
+     _gameData->assets.LoadTexture("Splash State Background", SPLASH_BACKGROUND_PATH);
 
      // This method is use for showing the splash background
-     _background.setTexture(this->_gameData->assets.getTexture("Splash State Background"));
+     _background.setTexture(this->_gameData->assets.GetTexture("Splash State Background"));
 }
 
 void BillyEngine::SplashState::HandleInput()
@@ -45,7 +45,7 @@ void BillyEngine::SplashState::Update(float deltaTime)
      }
      */
 
-     _gameData->machine.addState(StatePtr(new MainMenuState(_gameData)), true);
+     _gameData->machine.AddState(StatePtr(new MainMenuState(_gameData)), true);
 }
 
 void BillyEngine::SplashState::Draw(float deltaTime)

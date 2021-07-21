@@ -8,7 +8,7 @@ BillyEngine::InputManager::~InputManager()
 {
 }
 
-bool BillyEngine::InputManager::isSpriteClicked(sf::Sprite object, sf::Mouse::Button button, sf::RenderWindow &window)
+bool BillyEngine::InputManager::IsSpriteClicked(sf::Sprite object, sf::Mouse::Button button, sf::RenderWindow &window)
 {
      if (sf::Mouse::isButtonPressed(button))
      {
@@ -22,7 +22,7 @@ bool BillyEngine::InputManager::isSpriteClicked(sf::Sprite object, sf::Mouse::Bu
      return false;
 }
 
-sf::Vector2i BillyEngine::InputManager::getMousePosition(sf::RenderWindow &window)
+sf::Vector2i BillyEngine::InputManager::GetMousePosition(sf::RenderWindow &window)
 {
      return sf::Mouse::getPosition(window);
 }

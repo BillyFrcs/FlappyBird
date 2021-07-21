@@ -15,13 +15,13 @@ BillyEngine::MainMenuState::~MainMenuState()
 
 void BillyEngine::MainMenuState::Init()
 {
-     _gameData->assets.loadTexture("Main Menu Background", MAIN_MENU_BACKGROUND_GAME_PATH);
-     _gameData->assets.loadTexture("Title Game", GAME_TITLE_PATH);
-     _gameData->assets.loadTexture("Play Button Game", PLAY_BUTTON_GAME_PATH);
+     _gameData->assets.LoadTexture("Main Menu Background", MAIN_MENU_BACKGROUND_GAME_PATH);
+     _gameData->assets.LoadTexture("Title Game", GAME_TITLE_PATH);
+     _gameData->assets.LoadTexture("Play Button Game", PLAY_BUTTON_GAME_PATH);
 
-     _background.setTexture(this->_gameData->assets.getTexture("Main Menu Background"));
-     _title.setTexture(this->_gameData->assets.getTexture("Title Game"));
-     _playButton.setTexture(this->_gameData->assets.getTexture("Play Button Game"));
+     _background.setTexture(this->_gameData->assets.GetTexture("Main Menu Background"));
+     _title.setTexture(this->_gameData->assets.GetTexture("Title Game"));
+     _playButton.setTexture(this->_gameData->assets.GetTexture("Play Button Game"));
 
      // Set position menu x and y
      _title.setPosition((SCREEN_WIDTH / 2) - (_title.getLocalBounds().width / 2), _title.getLocalBounds().height / 2);
@@ -39,9 +39,9 @@ void BillyEngine::MainMenuState::HandleInput()
                _gameData->window.close();
           }
 
-          if (_gameData->input.isSpriteClicked(_playButton, sf::Mouse::Left, _gameData->window))
+          if (_gameData->input.IsSpriteClicked(_playButton, sf::Mouse::Left, _gameData->window))
           {
-               _gameData->machine.addState(StatePtr(new GameState(this->_gameData)));
+               _gameData->machine.AddState(StatePtr(new GameState(this->_gameData)));
 
                // std::cout << "Go To Game Screen\n";
           }

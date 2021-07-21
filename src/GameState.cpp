@@ -12,8 +12,13 @@ BillyEngine::GameState::~GameState()
 
 void BillyEngine::GameState::Init()
 {
-     _gameData->assets.loadTexture("Game Background", GAME_BACKGROUND_PATH);
-     _background.setTexture(this->_gameData->assets.getTexture("Game Background"));
+     _gameData->assets.LoadTexture("Game Background", GAME_BACKGROUND_PATH);
+     _gameData->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
+     _gameData->assets.LoadTexture("Pipe Down", PIPE_DOWN_FILEPATH);
+
+     _pipePtr = new Pipe(_gameData);
+
+     _background.setTexture(this->_gameData->assets.GetTexture("Game Background"));
 }
 
 void BillyEngine::GameState::HandleInput()
@@ -38,6 +43,7 @@ void BillyEngine::GameState::Draw(float deltaTime)
      _gameData->window.clear();
 
      _gameData->window.draw(_background);
+     _pipePtr->DrawPipes(); // Draw the pipes up and down on the screen
 
      _gameData->window.display();
 }

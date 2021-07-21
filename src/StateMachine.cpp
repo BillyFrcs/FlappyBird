@@ -9,7 +9,7 @@ BillyEngine::StateMachine::~StateMachine()
 }
 
 // State machine
-void BillyEngine::StateMachine::addState(StatePtr newStatePtr, bool isReplacing)
+void BillyEngine::StateMachine::AddState(StatePtr newStatePtr, bool isReplacing)
 {
      this->_isAdding = true;
      this->_isReplacing = isReplacing;
@@ -17,12 +17,12 @@ void BillyEngine::StateMachine::addState(StatePtr newStatePtr, bool isReplacing)
      this->_newState = std::move(newStatePtr);
 }
 
-void BillyEngine::StateMachine::removeState()
+void BillyEngine::StateMachine::RemoveState()
 {
      this->_isRemoving = true;
 }
 
-void BillyEngine::StateMachine::processStateChanges()
+void BillyEngine::StateMachine::ProcessStateChanges()
 {
      if (this->_isRemoving && !this->_states.empty())
      {

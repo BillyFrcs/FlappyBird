@@ -15,12 +15,12 @@ namespace BillyEngine
         ~AssetsManager();
 
         // Load textures
-        void loadTexture(std::string name, std::string fileName);
-        sf::Texture &getTexture(std::string name);
+        void LoadTexture(std::string name, std::string fileName);
+        sf::Texture &GetTexture(std::string name);
 
         // Load fonts
-        void loadFont(std::string name, std::string fileName);
-        sf::Font &getFont(std::string name);
+        void LoadFont(std::string name, std::string fileName);
+        sf::Font &GetFont(std::string name);
 
     private:
         std::map<std::string, sf::Texture> _textures;
