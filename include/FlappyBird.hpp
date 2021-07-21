@@ -5,6 +5,7 @@
 // Window screen size
 enum Screen
 {
+     // Default width = 768, height 1024 for this game
      SCREEN_WIDTH = 768,
      SCREEN_HEIGHT = 1024
 };
@@ -27,3 +28,4 @@ enum Screen
 #define PIPE_DOWN_FILEPATH "assets/SplashState/res/PipeDown.png"
 
 #define PIPE_MOVEMENT_SPEED 200.0f
+#define PIPE_SPAWN_FREQUENCY 3.0f // Set the time for spawn pipes

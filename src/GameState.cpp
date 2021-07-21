@@ -34,9 +34,11 @@ void BillyEngine::GameState::HandleInput()
 
           if (_gameData->input.IsSpriteClicked(_background, sf::Mouse::Left, _gameData->window))
           {
+               /* Didn't using it at this moment
                _pipePtr->SpawnInvisiblePipe();
                _pipePtr->SpawnBottomPipe();
                _pipePtr->SpawnTopPipe();
+               */
           }
      }
 }
@@ -44,6 +46,15 @@ void BillyEngine::GameState::HandleInput()
 void BillyEngine::GameState::Update(float deltaTime)
 {
      _pipePtr->MovePipes(deltaTime);
+
+     if (_clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FREQUENCY)
+     {
+          _pipePtr->SpawnInvisiblePipe();
+          _pipePtr->SpawnBottomPipe();
+          _pipePtr->SpawnTopPipe();
+
+          _clock.restart();
+     }
 }
 
 void BillyEngine::GameState::Draw(float deltaTime)

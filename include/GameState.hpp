@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
+#include <SFML/System/Clock.hpp>
 
 #include "Game.hpp"
 #include "Pipe.hpp"
@@ -23,8 +24,9 @@ namespace BillyEngine
     private:
         GameDataPtr _gameData;
 
-        sf::Sprite _background;
-
         Pipe *_pipePtr;
+
+        sf::Sprite _background;
+        sf::Clock _clock;
     };
 }
