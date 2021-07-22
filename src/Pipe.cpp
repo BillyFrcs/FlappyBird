@@ -3,7 +3,7 @@
 #include "FlappyBird.hpp"
 #include "Pipe.hpp"
 
-#define Y 0
+#define Y_POSITION 0
 
 BillyEngine::Pipe::Pipe(GameDataPtr gameData) : _gameData(gameData)
 {
@@ -19,16 +19,16 @@ void BillyEngine::Pipe::SpawnBottomPipe()
 
      sprite.setPosition(_gameData->window.getSize().x, _gameData->window.getSize().y - sprite.getLocalBounds().height);
 
-     _pipeSprites.push_back(sprite);
+     _pipeSpritesVec.push_back(sprite);
 }
 
 void BillyEngine::Pipe::SpawnTopPipe()
 {
      sf::Sprite sprite(_gameData->assets.GetTexture("Pipe Down"));
 
-     sprite.setPosition(_gameData->window.getSize().x, Y);
+     sprite.setPosition(_gameData->window.getSize().x, Y_POSITION);
 
-     _pipeSprites.push_back(sprite);
+     _pipeSpritesVec.push_back(sprite);
 }
 
 void BillyEngine::Pipe::SpawnInvisiblePipe()
@@ -40,16 +40,16 @@ void BillyEngine::Pipe::SpawnInvisiblePipe()
      // Set the invisible color of pipe
      sprite.setColor(sf::Color(0, 0, 0, 0));
 
-     _pipeSprites.push_back(sprite);
+     _pipeSpritesVec.push_back(sprite);
 }
 
 void BillyEngine::Pipe::MovePipes(float deltaTime)
 {
-     for (unsigned short int i = 0; i < _pipeSprites.size(); i++)
+     for (unsigned short int i = 0; i < _pipeSpritesVec.size(); i++)
      {
-          if (_pipeSprites.at(i).getPosition().x < Y - _pipeSprites.at(i).getGlobalBounds().width)
+          if (_pipeSpritesVec.at(i).getPosition().x < Y_POSITION - _pipeSpritesVec.at(i).getGlobalBounds().width)
           {
-               _pipeSprites.erase(_pipeSprites.begin() + i);
+               _pipeSpritesVec.erase(_pipeSpritesVec.begin() + i);
           }
           else
           {
@@ -57,7 +57,7 @@ void BillyEngine::Pipe::MovePipes(float deltaTime)
 
                float movement = (PIPE_MOVEMENT_SPEED * deltaTime);
 
-               _pipeSprites.at(i).move(-movement, Y);
+               _pipeSpritesVec.at(i).move(-movement, Y_POSITION);
           }
           //std::cout << _pipeSprites.size() << std::endl;
      }
@@ -66,8 +66,8 @@ void BillyEngine::Pipe::MovePipes(float deltaTime)
 // Draw the pipes method
 void BillyEngine::Pipe::DrawPipes()
 {
-     for (unsigned short int i = 0; i < _pipeSprites.size(); i++)
+     for (unsigned short int i = 0; i < _pipeSpritesVec.size(); i++)
      {
-          _gameData->window.draw(_pipeSprites.at(i));
+          _gameData->window.draw(_pipeSpritesVec.at(i));
      }
 }

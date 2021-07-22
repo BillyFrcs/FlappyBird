@@ -7,6 +7,7 @@
 #include "Game.hpp"
 #include "Pipe.hpp"
 #include "State.hpp"
+#include "Land.hpp"
 
 namespace BillyEngine
 {
@@ -25,6 +26,7 @@ namespace BillyEngine
         GameDataPtr _gameData;
 
         Pipe *_pipePtr;
+        Land *_landPtr;
 
         sf::Sprite _background;
         sf::Clock _clock;
