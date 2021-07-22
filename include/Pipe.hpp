@@ -21,10 +21,14 @@ namespace BillyEngine
         void SpawnTopPipe();
         void SpawnInvisiblePipe();
         void MovePipes(float deltaTime);
+        void RandomPipesOffset();
         void DrawPipes();
 
     private:
         GameDataPtr _gameData;
         std::vector<sf::Sprite> _pipeSpritesVec;
+
+        int _landHeight;
+        int _pipeSpawnYOffset;
     };
 }

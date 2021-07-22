@@ -23,7 +23,7 @@ BillyEngine::Land::~Land()
 
 void BillyEngine::Land::MoveLand(float deltaTime)
 {
-     for (unsigned short int i = 0; i < _landSpritesVec.size(); i++)
+     for (unsigned int i = 0; i < _landSpritesVec.size(); i++)
      {
           // To calculate the framerate game
           float movement = (PIPE_MOVEMENT_SPEED * deltaTime);
@@ -41,7 +41,7 @@ void BillyEngine::Land::MoveLand(float deltaTime)
 
 void BillyEngine::Land::DrawLand()
 {
-     for (unsigned short int i = 0; i < _landSpritesVec.size(); i++)
+     for (unsigned int i = 0; i < _landSpritesVec.size(); i++)
      {
           _gameData->window.draw(_landSpritesVec.at(i));
      }

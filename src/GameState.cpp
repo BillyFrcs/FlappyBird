@@ -53,6 +53,7 @@ void BillyEngine::GameState::Update(float deltaTime)
 
      if (_clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FREQUENCY)
      {
+          _pipePtr->RandomPipesOffset();
           _pipePtr->SpawnInvisiblePipe();
           _pipePtr->SpawnBottomPipe();
           _pipePtr->SpawnTopPipe();

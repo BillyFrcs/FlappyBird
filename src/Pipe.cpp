@@ -4,9 +4,13 @@
 #include "Pipe.hpp"
 
 #define Y_POSITION 0
+#define COUNT_RAND 1
 
 BillyEngine::Pipe::Pipe(GameDataPtr gameData) : _gameData(gameData)
 {
+     _landHeight = _gameData->assets.GetTexture("Land Game").getSize().y;
+
+     _pipeSpawnYOffset = Y_POSITION;
 }
 
 BillyEngine::Pipe::~Pipe()
@@ -15,32 +19,32 @@ BillyEngine::Pipe::~Pipe()
 
 void BillyEngine::Pipe::SpawnBottomPipe()
 {
-     sf::Sprite sprite(_gameData->assets.GetTexture("Pipe Up"));
+     sf::Sprite spriteBottom(_gameData->assets.GetTexture("Pipe Up"));
 
-     sprite.setPosition(_gameData->window.getSize().x, _gameData->window.getSize().y - sprite.getLocalBounds().height);
+     spriteBottom.setPosition(_gameData->window.getSize().x, _gameData->window.getSize().y - spriteBottom.getLocalBounds().height - _pipeSpawnYOffset);
 
-     _pipeSpritesVec.push_back(sprite);
+     _pipeSpritesVec.push_back(spriteBottom);
 }
 
 void BillyEngine::Pipe::SpawnTopPipe()
 {
-     sf::Sprite sprite(_gameData->assets.GetTexture("Pipe Down"));
+     sf::Sprite spriteDown(_gameData->assets.GetTexture("Pipe Down"));
 
-     sprite.setPosition(_gameData->window.getSize().x, Y_POSITION);
+     spriteDown.setPosition(_gameData->window.getSize().x, -_pipeSpawnYOffset);
 
-     _pipeSpritesVec.push_back(sprite);
+     _pipeSpritesVec.push_back(spriteDown);
 }
 
 void BillyEngine::Pipe::SpawnInvisiblePipe()
 {
-     sf::Sprite sprite(_gameData->assets.GetTexture("Pipe Down"));
+     sf::Sprite spriteInvisible(_gameData->assets.GetTexture("Pipe Down"));
 
-     sprite.setPosition(_gameData->window.getSize().x, _gameData->window.getSize().y - sprite.getLocalBounds().height);
+     spriteInvisible.setPosition(_gameData->window.getSize().x, _gameData->window.getSize().y - spriteInvisible.getLocalBounds().height);
 
      // Set the invisible color of pipe
-     sprite.setColor(sf::Color(0, 0, 0, 0));
+     spriteInvisible.setColor(sf::Color(0, 0, 0, 0));
 
-     _pipeSpritesVec.push_back(sprite);
+     _pipeSpritesVec.push_back(spriteInvisible);
 }
 
 void BillyEngine::Pipe::MovePipes(float deltaTime)
@@ -63,10 +67,15 @@ void BillyEngine::Pipe::MovePipes(float deltaTime)
      }
 }
 
+void BillyEngine::Pipe::RandomPipesOffset()
+{
+     _pipeSpawnYOffset = std::rand() % (_landHeight + COUNT_RAND);
+}
+
 // Draw the pipes method
 void BillyEngine::Pipe::DrawPipes()
 {
-     for (unsigned short int i = 0; i < _pipeSpritesVec.size(); i++)
+     for (unsigned int i = 0; i < _pipeSpritesVec.size(); i++)
      {
           _gameData->window.draw(_pipeSpritesVec.at(i));
      }
