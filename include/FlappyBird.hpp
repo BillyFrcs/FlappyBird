@@ -3,7 +3,7 @@
 #include "Game.hpp"
 
 // Window screen size
-enum ScreenWindow
+enum WindowScreenSize
 {
      // Default width = 768, height 1024 for this game
      SCREEN_WIDTH = 768,
