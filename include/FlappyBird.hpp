@@ -3,7 +3,7 @@
 #include "Game.hpp"
 
 // Window screen size
-enum Screen
+enum ScreenWindow
 {
      // Default width = 768, height 1024 for this game
      SCREEN_WIDTH = 768,
@@ -28,6 +28,6 @@ enum Screen
 #define PIPE_DOWN_FILEPATH "assets/textures/pipes/PipeDown.png"
 
 #define PIPE_MOVEMENT_SPEED 200.0f // Pipe movement
-#define PIPE_SPAWN_FREQUENCY 2.0f // Set the time for spawn pipes
+#define PIPE_SPAWN_FREQUENCY 2.0f  // Set the time for spawn pipes
 
-#define LAND_FILEPATH "assets/textures/land/land.png"
+#define LAND_FILEPATH "assets/textures/game-states/land.png"

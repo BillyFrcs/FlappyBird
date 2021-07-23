@@ -11,7 +11,7 @@ BillyEngine::GameData::~GameData()
 }
 
 // Game loop
-BillyEngine::Game::Game(int width, int height, std::string title)
+BillyEngine::Game::Game(const int width, const int height, const std::string title)
 {
      _gameData->window.create(sf::VideoMode(width, height), title, sf::Style::Close | sf::Style::Titlebar);
      _gameData->machine.AddState(StatePtr(new SplashState(this->_gameData)));

@@ -32,7 +32,7 @@ namespace BillyEngine
     class Game : public GameData
     {
     public:
-        Game(int width, int height, std::string title);
+        Game(const int width, const int height, const std::string title);
         ~Game();
 
     private:
