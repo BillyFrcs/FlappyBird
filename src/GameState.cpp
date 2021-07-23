@@ -13,13 +13,17 @@ BillyEngine::GameState::~GameState()
 void BillyEngine::GameState::Init()
 {
      _gameData->assets.LoadTexture("Game Background", GAME_BACKGROUND_PATH);
-     _gameData->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
 
+     _gameData->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
      _gameData->assets.LoadTexture("Pipe Down", PIPE_DOWN_FILEPATH);
+
      _gameData->assets.LoadTexture("Land Game", LAND_FILEPATH);
+
+     _gameData->assets.LoadTexture("Bird Frame 1", BIRD_FRAME1_FILEPATH);
 
      _pipePtr = new Pipe(_gameData); // Pipes
      _landPtr = new Land(_gameData); // Land
+     _birdPtr = new Bird(_gameData); // Bird
 
      _background.setTexture(this->_gameData->assets.GetTexture("Game Background"));
 }
@@ -67,8 +71,10 @@ void BillyEngine::GameState::Draw(float deltaTime)
      _gameData->window.clear();
 
      _gameData->window.draw(_background);
+
      _pipePtr->DrawPipes(); // Draw the pipes up and down on the screen
      _landPtr->DrawLand();  // Draw the land on the screen
+     _birdPtr->DrawBird();  // Draw bird
 
      _gameData->window.display();
 }

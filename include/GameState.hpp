@@ -4,10 +4,11 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/System/Clock.hpp>
 
+#include "Bird.hpp"
 #include "Game.hpp"
+#include "Land.hpp"
 #include "Pipe.hpp"
 #include "State.hpp"
-#include "Land.hpp"
 
 namespace BillyEngine
 {
@@ -27,6 +28,7 @@ namespace BillyEngine
 
         Pipe *_pipePtr;
         Land *_landPtr;
+        Bird *_birdPtr;
 
         sf::Sprite _background;
         sf::Clock _clock;
