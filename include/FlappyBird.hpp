@@ -19,6 +19,8 @@ enum WindowScreenSize
 #define PIPE_MOVEMENT_SPEED 200.0f // Pipe movement
 #define PIPE_SPAWN_FREQUENCY 2.0f  // Set the time for spawn pipes
 
+#define BIRD_ANIMATION_FLYING_TIME 0.4f
+
 /*Flappy bird definition to load assets from file path*/
 // Background and main menu
 #define SPLASH_BACKGROUND_PATH "assets/textures/game-states/FlappySky.png"

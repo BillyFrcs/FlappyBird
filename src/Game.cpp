@@ -17,7 +17,7 @@ BillyEngine::GameData::~GameData()
 BillyEngine::Game::Game(const int width, const int height, const std::string title)
 {
      std::srand((unsigned int)time(NULL));
-     // std::srand(time(NULL));
+     //std::srand(time(NULL));
 
      _gameData->window.create(sf::VideoMode(width, height), title, sf::Style::Close | sf::Style::Titlebar);
      _gameData->machine.AddState(StatePtr(new SplashState(this->_gameData)));

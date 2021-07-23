@@ -4,7 +4,7 @@
 #include "Pipe.hpp"
 
 #define Y_POSITION 0
-#define COUNT_RAND 1
+#define COUNT_RAND 5 // Default 1
 
 BillyEngine::Pipe::Pipe(GameDataPtr gameData) : _gameData(gameData)
 {

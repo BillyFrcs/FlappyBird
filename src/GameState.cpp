@@ -12,18 +12,25 @@ BillyEngine::GameState::~GameState()
 
 void BillyEngine::GameState::Init()
 {
+     // Load background
      _gameData->assets.LoadTexture("Game Background", GAME_BACKGROUND_PATH);
 
+     // Load pipes
      _gameData->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
      _gameData->assets.LoadTexture("Pipe Down", PIPE_DOWN_FILEPATH);
 
+     // Load land
      _gameData->assets.LoadTexture("Land Game", LAND_FILEPATH);
 
+     // Load frames birds
      _gameData->assets.LoadTexture("Bird Frame 1", BIRD_FRAME1_FILEPATH);
+     _gameData->assets.LoadTexture("Bird Frame 2", BIRD_FRAME2_FILEPATH);
+     _gameData->assets.LoadTexture("Bird Frame 3", BIRD_FRAME3_FILEPATH);
+     _gameData->assets.LoadTexture("Bird Frame 4", BIRD_FRAME4_FILEPATH);
 
      _pipePtr = new Pipe(_gameData); // Pipes
      _landPtr = new Land(_gameData); // Land
-     _birdPtr = new Bird(_gameData); // Bird
+     _birdPtr = new Bird(_gameData); // Bird frames
 
      _background.setTexture(this->_gameData->assets.GetTexture("Game Background"));
 }
@@ -41,11 +48,10 @@ void BillyEngine::GameState::HandleInput()
 
           if (_gameData->input.IsSpriteClicked(_background, sf::Mouse::Left, _gameData->window))
           {
-               /* Didn't using it at this moment
+               /* Didn't using it at the moment
                _pipePtr->SpawnInvisiblePipe();
                _pipePtr->SpawnBottomPipe();
-               _pipePtr->SpawnTopPipe();
-               */
+               _pipePtr->SpawnTopPipe();*/
           }
      }
 }
@@ -64,6 +70,8 @@ void BillyEngine::GameState::Update(float deltaTime)
 
           _clock.restart();
      }
+
+     _birdPtr->BirdAnimation(deltaTime);
 }
 
 void BillyEngine::GameState::Draw(float deltaTime)
