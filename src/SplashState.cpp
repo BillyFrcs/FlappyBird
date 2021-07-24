@@ -45,6 +45,7 @@ void BillyEngine::SplashState::Update(float deltaTime)
      }
      */
 
+     // Move this method inside the if statement to display the splash screen
      _gameData->machine.AddState(StatePtr(new MainMenuState(_gameData)), true);
 }
 

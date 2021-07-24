@@ -23,7 +23,7 @@ enum WindowScreenSize
 #define PIPE_SPAWN_FREQUENCY 2.0f
 //////////////////////////////////
 
-// Bird Animation /////////////////////
+// Bird animations /////////////////////
 #define BIRD_ANIMATION_FLYING_TIME 0.4f
 
 #define BIRD_STATE_STILL 1
