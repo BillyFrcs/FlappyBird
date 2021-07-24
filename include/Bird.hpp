@@ -33,5 +33,6 @@ namespace BillyEngine
 
         unsigned int _birdAnimationIterator;
         int _birdState;
+        float _birdRotation;
     };
 }

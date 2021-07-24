@@ -18,13 +18,14 @@ enum WindowScreenSize
 #define SPLASH_STATE_TIME 3.0
 */
 
-// Movements and frequency ///////////////////////////////////////
-#define PIPE_MOVEMENT_SPEED 200.0f // Pipe movement
-#define PIPE_SPAWN_FREQUENCY 2.0f  // Set the time for spawn pipes
-//////////////////////////////////////////////////////////////////
+// Movements and frequency ///////
+#define PIPE_MOVEMENT_SPEED 200.0f
+#define PIPE_SPAWN_FREQUENCY 2.0f
+//////////////////////////////////
 
 // Bird Animation /////////////////////
 #define BIRD_ANIMATION_FLYING_TIME 0.4f
+
 #define BIRD_STATE_STILL 1
 #define BIRD_STATE_FALLING 2
 #define BIRD_STATE_FLYING 3
@@ -32,6 +33,8 @@ enum WindowScreenSize
 #define BIRD_GRAVITY 350.0f
 #define BIRD_FLYING_SPEED 350.0f
 #define BIRD_FLYING_DURATION 0.25f
+
+#define BIRD_ROTATION_SPEED 100.f
 ///////////////////////////////////////
 
 /*Flappy bird definition to load assets from file path*/

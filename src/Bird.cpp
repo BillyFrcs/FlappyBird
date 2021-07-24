@@ -18,6 +18,12 @@ BillyEngine::Bird::Bird(GameDataPtr gameData) : _gameData(gameData)
      _birdSprite.setPosition((_gameData->window.getSize().x / 4) - (_birdSprite.getGlobalBounds().width / 2), (_gameData->window.getSize().y / 2) - (_birdSprite.getGlobalBounds().height / 2));
 
      _birdState = BIRD_STATE_STILL;
+
+     sf::Vector2f origin = sf::Vector2f(_birdSprite.getGlobalBounds().width / 2, _birdSprite.getGlobalBounds().height / 2);
+
+     _birdSprite.setOrigin(origin);
+
+     _birdRotation = VALUE;
 }
 
 BillyEngine::Bird::~Bird()
@@ -53,11 +59,29 @@ void BillyEngine::Bird::Update(float deltaTime)
      if (BIRD_STATE_FALLING == _birdState)
      {
           _birdSprite.move(VALUE, BIRD_GRAVITY * deltaTime);
+
+          _birdRotation += (BIRD_ROTATION_SPEED * deltaTime);
+
+          if (_birdRotation > 24.0f)
+          {
+               _birdRotation = 24.0f;
+          }
+
+          _birdSprite.setRotation(_birdRotation);
      }
 
      else if (BIRD_STATE_FLYING == _birdState)
      {
           _birdSprite.move(VALUE, -BIRD_FLYING_SPEED * deltaTime);
+
+          _birdRotation -= (BIRD_ROTATION_SPEED * deltaTime);
+
+          if (_birdRotation < -24.f)
+          {
+               _birdRotation = -24.f;
+          }
+
+          _birdSprite.setRotation(_birdRotation);
      }
 
      if (_movementClockBird.getElapsedTime().asSeconds() > BIRD_FLYING_DURATION)
