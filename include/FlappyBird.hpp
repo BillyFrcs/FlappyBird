@@ -2,16 +2,7 @@
 
 #include "Game.hpp"
 
-#ifndef FLAPPYBIRD
-
-// Window screen size ////////////////////////////////
-enum WindowScreenSize
-{
-     // Default width = 768, height 1024 for this game
-     SCREEN_WIDTH = 768,
-     SCREEN_HEIGHT = 1024
-};
-/////////////////////////////////////////////////////
+#ifndef FLAPPY__BIRD
 
 /*
  * Didn't using splash time at this moment.
@@ -34,7 +25,7 @@ enum WindowScreenSize
 #define BIRD_FLYING_SPEED 350.0f
 #define BIRD_FLYING_DURATION 0.25f
 
-#define BIRD_ROTATION_SPEED 100.f
+#define BIRD_ROTATION_SPEED 100.0f
 ///////////////////////////////////////
 
 /*Flappy bird definition to load assets from file path*/
@@ -65,5 +56,23 @@ enum WindowScreenSize
 #define BIRD_FRAME3_FILEPATH "assets/textures/birds/frameBird-3.png"
 #define BIRD_FRAME4_FILEPATH "assets/textures/birds/frameBird-4.png"
 ////////////////////////////////////////////////////////////////////
+
+// Window screen size ////////////////////////////////
+enum WindowScreenSize
+{
+     // Default width = 768, height 1024 for this game
+     E_Screen_Width = 768,
+     E_Screen_Height = 1024
+};
+/////////////////////////////////////////////////////
+
+// Game states //
+enum GameStates
+{
+     E_GameReady,
+     E_GamePlaying,
+     E_GameOver
+};
+//////////////
 
 #endif

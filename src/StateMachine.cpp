@@ -54,3 +54,11 @@ void BillyEngine::StateMachine::ProcessStateChanges()
           this->_isAdding = false;
      }
 }
+
+namespace BillyEngine
+{
+     StatePtr &BillyEngine::StateMachine::GetActiveState()
+     {
+          return this->_states.top();
+     }
+}

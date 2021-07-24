@@ -21,10 +21,7 @@ namespace BillyEngine
 
         void ProcessStateChanges();
 
-        StatePtr &GetActiveState()
-        {
-            return this->_states.top();
-        }
+        StatePtr &GetActiveState();
 
     private:
         std::stack<StatePtr> _states;

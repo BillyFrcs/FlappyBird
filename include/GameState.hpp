@@ -5,6 +5,7 @@
 #include <SFML/System/Clock.hpp>
 
 #include "Bird.hpp"
+#include "Collision.hpp"
 #include "Game.hpp"
 #include "Land.hpp"
 #include "Pipe.hpp"
@@ -30,7 +31,11 @@ namespace BillyEngine
         Land *_landPtr;
         Bird *_birdPtr;
 
+        Collision _collision;
+
         sf::Sprite _background;
         sf::Clock _clock;
+
+        int _gameState;
     };
 }

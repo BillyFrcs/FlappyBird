@@ -33,6 +33,8 @@ void BillyEngine::GameState::Init()
      _birdPtr = new Bird(_gameData); // Bird frames
 
      _background.setTexture(this->_gameData->assets.GetTexture("Game Background"));
+
+     _gameState = GameStates::E_GameReady;
 }
 
 void BillyEngine::GameState::HandleInput()
@@ -54,28 +56,48 @@ void BillyEngine::GameState::HandleInput()
                _pipePtr->SpawnTopPipe();
                */
 
-               _birdPtr->TapBird();
+               if (GameStates::E_GameOver != _gameState)
+               {
+                    _gameState = GameStates::E_GamePlaying;
+                    _birdPtr->TapBird();
+               }
           }
      }
 }
 
 void BillyEngine::GameState::Update(float deltaTime)
 {
-     _pipePtr->MovePipes(deltaTime);
-     _landPtr->MoveLand(deltaTime);
-
-     if (_clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FREQUENCY)
+     if (GameStates::E_GameOver != _gameState)
      {
-          _pipePtr->RandomPipesOffset();
-          _pipePtr->SpawnInvisiblePipe();
-          _pipePtr->SpawnBottomPipe();
-          _pipePtr->SpawnTopPipe();
-
-          _clock.restart();
+          _birdPtr->BirdAnimation(deltaTime);
+          _landPtr->MoveLand(deltaTime);
      }
 
-     _birdPtr->BirdAnimation(deltaTime);
-     _birdPtr->Update(deltaTime);
+     if (GameStates::E_GamePlaying == _gameState)
+     {
+          _pipePtr->MovePipes(deltaTime);
+
+          if (_clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FREQUENCY)
+          {
+               _pipePtr->RandomPipesOffset();
+               _pipePtr->SpawnInvisiblePipe();
+               _pipePtr->SpawnBottomPipe();
+               _pipePtr->SpawnTopPipe();
+
+               _clock.restart();
+          }
+          _birdPtr->Update(deltaTime);
+
+          std::vector<sf::Sprite> landSpriteVec = _landPtr->GetSpriteLandVec();
+
+          for (unsigned int i = 0; i < landSpriteVec.size(); i++)
+          {
+               if (_collision.IsCheckSpriteCollision(_birdPtr->GetSpriteBird(), landSpriteVec.at(i)))
+               {
+                    _gameState = GameStates::E_GameOver;
+               }
+          }
+     }
 }
 
 void BillyEngine::GameState::Draw(float deltaTime)

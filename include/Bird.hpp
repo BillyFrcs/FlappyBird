@@ -22,6 +22,8 @@ namespace BillyEngine
         void Update(float deltaTime);
         void TapBird();
 
+        const sf::Sprite &GetSpriteBird() const;
+
     private:
         GameDataPtr _gameData;
 

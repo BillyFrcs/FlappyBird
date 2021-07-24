@@ -24,8 +24,8 @@ void BillyEngine::MainMenuState::Init()
      _playButton.setTexture(this->_gameData->assets.GetTexture("Play Button Game"));
 
      // Set position menu x and y
-     _title.setPosition((SCREEN_WIDTH / 2) - (_title.getLocalBounds().width / 2), _title.getLocalBounds().height / 2);
-     _playButton.setPosition((SCREEN_WIDTH / 2) - (_playButton.getLocalBounds().width / 2), (SCREEN_HEIGHT / 2) - (_playButton.getLocalBounds().height / 2));
+     _title.setPosition((E_Screen_Width / 2) - (_title.getLocalBounds().width / 2), _title.getLocalBounds().height / 2);
+     _playButton.setPosition((E_Screen_Width / 2) - (_playButton.getLocalBounds().width / 2), (E_Screen_Height / 2) - (_playButton.getLocalBounds().height / 2));
 }
 
 void BillyEngine::MainMenuState::HandleInput()

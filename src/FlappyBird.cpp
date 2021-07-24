@@ -3,7 +3,7 @@
 
 int main()
 {
-    BillyEngine::Game(SCREEN_WIDTH, SCREEN_HEIGHT, "Flappy Bird");
+    BillyEngine::Game(WindowScreenSize::E_Screen_Width, WindowScreenSize::E_Screen_Height, "Flappy Bird");
 
     return EXIT_SUCCESS;
 }

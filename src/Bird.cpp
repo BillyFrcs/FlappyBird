@@ -97,3 +97,8 @@ void BillyEngine::Bird::TapBird()
      _movementClockBird.restart();
      _birdState = BIRD_STATE_FLYING;
 }
+
+const sf::Sprite &BillyEngine::Bird::GetSpriteBird() const
+{
+     return _birdSprite;
+}
