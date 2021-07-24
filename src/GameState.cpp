@@ -51,7 +51,10 @@ void BillyEngine::GameState::HandleInput()
                /* Didn't using it at the moment
                _pipePtr->SpawnInvisiblePipe();
                _pipePtr->SpawnBottomPipe();
-               _pipePtr->SpawnTopPipe();*/
+               _pipePtr->SpawnTopPipe();
+               */
+
+               _birdPtr->TapBird();
           }
      }
 }
@@ -72,6 +75,7 @@ void BillyEngine::GameState::Update(float deltaTime)
      }
 
      _birdPtr->BirdAnimation(deltaTime);
+     _birdPtr->Update(deltaTime);
 }
 
 void BillyEngine::GameState::Draw(float deltaTime)

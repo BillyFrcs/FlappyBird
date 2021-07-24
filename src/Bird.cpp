@@ -14,6 +14,10 @@ BillyEngine::Bird::Bird(GameDataPtr gameData) : _gameData(gameData)
      //_birdSprite.setTexture(_gameData->assets.GetTexture("Bird Frame 1"));
 
      _birdSprite.setTexture(_birdAnimationFrames.at(_birdAnimationIterator));
+
+     _birdSprite.setPosition((_gameData->window.getSize().x / 4) - (_birdSprite.getGlobalBounds().width / 2), (_gameData->window.getSize().y / 2) - (_birdSprite.getGlobalBounds().height / 2));
+
+     _birdState = BIRD_STATE_STILL;
 }
 
 BillyEngine::Bird::~Bird()
@@ -42,4 +46,30 @@ void BillyEngine::Bird::BirdAnimation(float deltaTime)
 
           _clockBird.restart();
      }
+}
+
+void BillyEngine::Bird::Update(float deltaTime)
+{
+     if (BIRD_STATE_FALLING == _birdState)
+     {
+          _birdSprite.move(VALUE, BIRD_GRAVITY * deltaTime);
+     }
+
+     else if (BIRD_STATE_FLYING == _birdState)
+     {
+          _birdSprite.move(VALUE, -BIRD_FLYING_SPEED * deltaTime);
+     }
+
+     if (_movementClockBird.getElapsedTime().asSeconds() > BIRD_FLYING_DURATION)
+     {
+          _movementClockBird.restart();
+
+          _birdState = BIRD_STATE_FALLING;
+     }
+}
+
+void BillyEngine::Bird::TapBird()
+{
+     _movementClockBird.restart();
+     _birdState = BIRD_STATE_FLYING;
 }

@@ -19,14 +19,19 @@ namespace BillyEngine
 
         void DrawBird();
         void BirdAnimation(float deltaTime);
+        void Update(float deltaTime);
+        void TapBird();
 
     private:
         GameDataPtr _gameData;
 
         sf::Sprite _birdSprite;
         sf::Clock _clockBird;
+        sf::Clock _movementClockBird;
+
         std::vector<sf::Texture> _birdAnimationFrames;
 
         unsigned int _birdAnimationIterator;
+        int _birdState;
     };
 }
