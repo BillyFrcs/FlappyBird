@@ -48,6 +48,7 @@
 // Pipes /////////////////////////////////////////////////////
 #define PIPE_UP_FILEPATH "assets/textures/pipes/PipeUp2Red.png"
 #define PIPE_DOWN_FILEPATH "assets/textures/pipes/PipeDown2.png"
+#define INVISIBLE_SCORING_PIPE_FILEPATH "assets/textures/pipes/InvisibleScoringPipe.png"
 //////////////////////////////////////////////////////////////
 
 // Land /////////////////////////////////////////////////////
@@ -74,7 +75,7 @@ enum WindowScreenSize
 enum GameStates
 {
      E_GameReady,
-     E_GamePlaying,
+     E_PlayingGame,
      E_GameOver
 };
 //////////////

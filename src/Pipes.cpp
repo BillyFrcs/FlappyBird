@@ -4,7 +4,7 @@
 #include "Pipes.hpp"
 
 #define Y_POSITION 0
-#define COUNT_RAND 5 // Default 1
+#define COUNT_RAND 1 // Default 1
 
 BillyEngine::Pipes::Pipes(GameDataPtr gameData) : _gameData(gameData)
 {
@@ -23,7 +23,7 @@ void BillyEngine::Pipes::SpawnBottomPipe()
 
      spriteBottom.setPosition(_gameData->window.getSize().x, _gameData->window.getSize().y - spriteBottom.getLocalBounds().height - _pipeSpawnYOffset);
 
-     _pipeSpritesVec.push_back(spriteBottom);
+     _pipesSpriteVec.push_back(spriteBottom);
 }
 
 void BillyEngine::Pipes::SpawnTopPipe()
@@ -32,7 +32,7 @@ void BillyEngine::Pipes::SpawnTopPipe()
 
      spriteDown.setPosition(_gameData->window.getSize().x, -_pipeSpawnYOffset);
 
-     _pipeSpritesVec.push_back(spriteDown);
+     _pipesSpriteVec.push_back(spriteDown);
 }
 
 void BillyEngine::Pipes::SpawnInvisiblePipe()
@@ -44,16 +44,26 @@ void BillyEngine::Pipes::SpawnInvisiblePipe()
      // Set the invisible color of pipe
      spriteInvisible.setColor(sf::Color(0, 0, 0, 0));
 
-     _pipeSpritesVec.push_back(spriteInvisible);
+     _pipesSpriteVec.push_back(spriteInvisible);
+}
+
+void BillyEngine::Pipes::SpawnScoringPipes()
+{
+     sf::Sprite scoringSpritePipes(_gameData->assets.GetTexture("Scoring Pipe"));
+
+     scoringSpritePipes.setPosition(_gameData->window.getSize().x, Y_POSITION);
+
+     _scoringSpritePipesVec.push_back(scoringSpritePipes);
 }
 
 void BillyEngine::Pipes::MovePipes(float deltaTime)
 {
-     for (unsigned short int i = 0; i < _pipeSpritesVec.size(); i++)
+     // Pipes sprite
+     for (uint32_t i = 0; i < _pipesSpriteVec.size(); i++)
      {
-          if (_pipeSpritesVec.at(i).getPosition().x < Y_POSITION - _pipeSpritesVec.at(i).getGlobalBounds().width)
+          if (_pipesSpriteVec.at(i).getPosition().x < Y_POSITION - _pipesSpriteVec.at(i).getGlobalBounds().width)
           {
-               _pipeSpritesVec.erase(_pipeSpritesVec.begin() + i);
+               _pipesSpriteVec.erase(_pipesSpriteVec.begin() + i);
           }
           else
           {
@@ -61,7 +71,25 @@ void BillyEngine::Pipes::MovePipes(float deltaTime)
 
                float movement = (PIPE_MOVEMENT_SPEED * deltaTime);
 
-               _pipeSpritesVec.at(i).move(-movement, Y_POSITION);
+               _pipesSpriteVec.at(i).move(-movement, Y_POSITION);
+          }
+          //std::cout << _pipeSprites.size() << std::endl;
+     }
+
+     // Scoring sprite pipes
+     for (uint32_t i = 0; i < _scoringSpritePipesVec.size(); i++)
+     {
+          if (_scoringSpritePipesVec.at(i).getPosition().x < Y_POSITION - _scoringSpritePipesVec.at(i).getGlobalBounds().width)
+          {
+               _scoringSpritePipesVec.erase(_scoringSpritePipesVec.begin() + i);
+          }
+          else
+          {
+               // sf::Vector2f position = _pipeSprites.at(i).getPosition();
+
+               float movement = (PIPE_MOVEMENT_SPEED * deltaTime);
+
+               _scoringSpritePipesVec.at(i).move(-movement, Y_POSITION);
           }
           //std::cout << _pipeSprites.size() << std::endl;
      }
@@ -75,13 +103,18 @@ void BillyEngine::Pipes::RandomPipesOffset()
 // Draw the pipes method
 void BillyEngine::Pipes::DrawPipes()
 {
-     for (unsigned int i = 0; i < _pipeSpritesVec.size(); i++)
+     for (u_int32_t i = 0; i < _pipesSpriteVec.size(); i++)
      {
-          _gameData->window.draw(_pipeSpritesVec.at(i));
+          _gameData->window.draw(_pipesSpriteVec.at(i));
      }
 }
 
 const std::vector<sf::Sprite> &BillyEngine::Pipes::GetSpritePipesVec() const
 {
-     return _pipeSpritesVec;
+     return _pipesSpriteVec;
+}
+
+std::vector<sf::Sprite> &BillyEngine::Pipes::GetScoringSpritePipesVec()
+{
+     return _scoringSpritePipesVec;
 }

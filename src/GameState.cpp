@@ -2,6 +2,8 @@
 #include "FlappyBird.hpp"
 #include "MainMenuState.hpp"
 
+#include <iostream>
+
 /* Didn't using this definition 
 #define SCALE_LAND1 0.7f
 #define SCALE_LAND2 1.0f
@@ -23,9 +25,10 @@ void BillyEngine::GameState::Init()
      // Load background
      _gameData->assets.LoadTexture("Game Background", GAME_BACKGROUND_PATH);
 
-     // Load pipes
+     // Load pipes and invisible scoring
      _gameData->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
      _gameData->assets.LoadTexture("Pipe Down", PIPE_DOWN_FILEPATH);
+     _gameData->assets.LoadTexture("Scoring Pipe", INVISIBLE_SCORING_PIPE_FILEPATH);
 
      // Load land
      _gameData->assets.LoadTexture("Land Game", LAND_FILEPATH);
@@ -42,6 +45,8 @@ void BillyEngine::GameState::Init()
      _flashPtr = new Flash(_gameData); // Flash
 
      _background.setTexture(this->_gameData->assets.GetTexture("Game Background"));
+
+     _scoreGame = 0;
 
      _gameState = GameStates::E_GameReady;
 }
@@ -67,7 +72,7 @@ void BillyEngine::GameState::HandleInput()
 
                if (GameStates::E_GameOver != _gameState)
                {
-                    _gameState = GameStates::E_GamePlaying;
+                    _gameState = GameStates::E_PlayingGame;
                     _birdPtr->TapBird();
                }
           }
@@ -82,7 +87,7 @@ void BillyEngine::GameState::Update(float deltaTime)
           _landPtr->MoveLand(deltaTime);
      }
 
-     if (GameStates::E_GamePlaying == _gameState)
+     if (GameStates::E_PlayingGame == _gameState)
      {
           _pipePtr->MovePipes(deltaTime);
 
@@ -92,9 +97,11 @@ void BillyEngine::GameState::Update(float deltaTime)
                _pipePtr->SpawnInvisiblePipe();
                _pipePtr->SpawnBottomPipe();
                _pipePtr->SpawnTopPipe();
+               _pipePtr->SpawnScoringPipes();
 
                _clock.restart();
           }
+
           _birdPtr->Update(deltaTime);
 
           // Land sprite collision detected
@@ -116,6 +123,25 @@ void BillyEngine::GameState::Update(float deltaTime)
                if (_collision.IsCheckSpriteCollision(_birdPtr->GetSpriteBird(), 0.625f, pipeSpriteVec.at(i), 1.0f))
                {
                     _gameState = GameStates::E_GameOver;
+               }
+          }
+
+          if (GameStates::E_PlayingGame == _gameState)
+          {
+               // Pipe invisible sprite collision detection
+               std::vector<sf::Sprite> &pipeScoringSpriteVec = _pipePtr->GetScoringSpritePipesVec();
+
+               for (unsigned int i = 0; i < pipeScoringSpriteVec.size(); i++)
+               {
+                    if (_collision.IsCheckSpriteCollision(_birdPtr->GetSpriteBird(), 0.600f, pipeScoringSpriteVec.at(i), 1.0f))
+                    {
+                         _scoreGame++;
+
+                         // Check if the score is count or not in the console
+                         std::cout << _scoreGame << std::endl;
+
+                         pipeScoringSpriteVec.erase(pipeScoringSpriteVec.begin() + i);
+                    }
                }
           }
      }

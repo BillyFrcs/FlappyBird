@@ -39,5 +39,6 @@ namespace BillyEngine
         sf::Clock _clock;
 
         int _gameState;
+        int _scoreGame;
     };
 }
