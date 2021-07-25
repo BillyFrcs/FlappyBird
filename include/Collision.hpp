@@ -11,6 +11,9 @@ namespace BillyEngine
         Collision();
         ~Collision();
 
-        bool IsCheckSpriteCollision(sf::Sprite spriteParam1, sf::Sprite spriteParam2);
+        // Didn't using this collision at the moment
+        // bool IsCheckSpriteCollision(sf::Sprite spriteParam1, sf::Sprite spriteParam2);
+
+        bool IsCheckSpriteCollision(sf::Sprite spriteParam1, float scaleParam1, sf::Sprite spriteParam2, float scaleParam2);
     };
 }

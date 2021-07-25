@@ -8,7 +8,7 @@
 #include "Collision.hpp"
 #include "Game.hpp"
 #include "Land.hpp"
-#include "Pipe.hpp"
+#include "Pipes.hpp"
 #include "State.hpp"
 
 namespace BillyEngine
@@ -27,7 +27,7 @@ namespace BillyEngine
     private:
         GameDataPtr _gameData;
 
-        Pipe *_pipePtr;
+        Pipes *_pipePtr;
         Land *_landPtr;
         Bird *_birdPtr;
 

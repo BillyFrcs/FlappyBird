@@ -11,11 +11,11 @@
 
 namespace BillyEngine
 {
-    class Pipe
+    class Pipes
     {
     public:
-        Pipe(GameDataPtr gameData);
-        ~Pipe();
+        Pipes(GameDataPtr gameData);
+        ~Pipes();
 
         void SpawnBottomPipe();
         void SpawnTopPipe();
@@ -23,6 +23,8 @@ namespace BillyEngine
         void MovePipes(float deltaTime);
         void RandomPipesOffset();
         void DrawPipes();
+
+        const std::vector<sf::Sprite> &GetSpritePipesVec() const;
 
     private:
         GameDataPtr _gameData;

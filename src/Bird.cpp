@@ -62,9 +62,9 @@ void BillyEngine::Bird::Update(float deltaTime)
 
           _birdRotation += (BIRD_ROTATION_SPEED * deltaTime);
 
-          if (_birdRotation > 24.0f)
+          if (_birdRotation > 25.0f)
           {
-               _birdRotation = 24.0f;
+               _birdRotation = 25.0f;
           }
 
           _birdSprite.setRotation(_birdRotation);
@@ -76,9 +76,9 @@ void BillyEngine::Bird::Update(float deltaTime)
 
           _birdRotation -= (BIRD_ROTATION_SPEED * deltaTime);
 
-          if (_birdRotation < -24.f)
+          if (_birdRotation < -25.f)
           {
-               _birdRotation = -24.f;
+               _birdRotation = -25.f;
           }
 
           _birdSprite.setRotation(_birdRotation);

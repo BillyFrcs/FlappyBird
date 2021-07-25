@@ -1,23 +1,23 @@
 #include <iostream>
 
 #include "FlappyBird.hpp"
-#include "Pipe.hpp"
+#include "Pipes.hpp"
 
 #define Y_POSITION 0
 #define COUNT_RAND 5 // Default 1
 
-BillyEngine::Pipe::Pipe(GameDataPtr gameData) : _gameData(gameData)
+BillyEngine::Pipes::Pipes(GameDataPtr gameData) : _gameData(gameData)
 {
      _landHeight = _gameData->assets.GetTexture("Land Game").getSize().y;
 
      _pipeSpawnYOffset = Y_POSITION;
 }
 
-BillyEngine::Pipe::~Pipe()
+BillyEngine::Pipes::~Pipes()
 {
 }
 
-void BillyEngine::Pipe::SpawnBottomPipe()
+void BillyEngine::Pipes::SpawnBottomPipe()
 {
      sf::Sprite spriteBottom(_gameData->assets.GetTexture("Pipe Up"));
 
@@ -26,7 +26,7 @@ void BillyEngine::Pipe::SpawnBottomPipe()
      _pipeSpritesVec.push_back(spriteBottom);
 }
 
-void BillyEngine::Pipe::SpawnTopPipe()
+void BillyEngine::Pipes::SpawnTopPipe()
 {
      sf::Sprite spriteDown(_gameData->assets.GetTexture("Pipe Down"));
 
@@ -35,7 +35,7 @@ void BillyEngine::Pipe::SpawnTopPipe()
      _pipeSpritesVec.push_back(spriteDown);
 }
 
-void BillyEngine::Pipe::SpawnInvisiblePipe()
+void BillyEngine::Pipes::SpawnInvisiblePipe()
 {
      sf::Sprite spriteInvisible(_gameData->assets.GetTexture("Pipe Down"));
 
@@ -47,7 +47,7 @@ void BillyEngine::Pipe::SpawnInvisiblePipe()
      _pipeSpritesVec.push_back(spriteInvisible);
 }
 
-void BillyEngine::Pipe::MovePipes(float deltaTime)
+void BillyEngine::Pipes::MovePipes(float deltaTime)
 {
      for (unsigned short int i = 0; i < _pipeSpritesVec.size(); i++)
      {
@@ -67,16 +67,21 @@ void BillyEngine::Pipe::MovePipes(float deltaTime)
      }
 }
 
-void BillyEngine::Pipe::RandomPipesOffset()
+void BillyEngine::Pipes::RandomPipesOffset()
 {
      _pipeSpawnYOffset = std::rand() % (_landHeight + COUNT_RAND);
 }
 
 // Draw the pipes method
-void BillyEngine::Pipe::DrawPipes()
+void BillyEngine::Pipes::DrawPipes()
 {
      for (unsigned int i = 0; i < _pipeSpritesVec.size(); i++)
      {
           _gameData->window.draw(_pipeSpritesVec.at(i));
      }
+}
+
+const std::vector<sf::Sprite> &BillyEngine::Pipes::GetSpritePipesVec() const
+{
+     return _pipeSpritesVec;
 }

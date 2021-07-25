@@ -2,6 +2,12 @@
 #include "FlappyBird.hpp"
 #include "MainMenuState.hpp"
 
+#define SCALE_LAND1 0.9f
+#define SCALE_LAND2 1.0f
+
+#define SCALE_PIPE1 0.628f
+#define SCALE_PIPE2 0.5f
+
 BillyEngine::GameState::GameState(GameDataPtr gameData) : _gameData(gameData)
 {
 }
@@ -28,9 +34,9 @@ void BillyEngine::GameState::Init()
      _gameData->assets.LoadTexture("Bird Frame 3", BIRD_FRAME3_FILEPATH);
      _gameData->assets.LoadTexture("Bird Frame 4", BIRD_FRAME4_FILEPATH);
 
-     _pipePtr = new Pipe(_gameData); // Pipes
-     _landPtr = new Land(_gameData); // Land
-     _birdPtr = new Bird(_gameData); // Bird frames
+     _pipePtr = new Pipes(_gameData); // Pipes
+     _landPtr = new Land(_gameData);  // Land
+     _birdPtr = new Bird(_gameData);  // Bird frames
 
      _background.setTexture(this->_gameData->assets.GetTexture("Game Background"));
 
@@ -88,11 +94,23 @@ void BillyEngine::GameState::Update(float deltaTime)
           }
           _birdPtr->Update(deltaTime);
 
+          // Land sprite collision detected
           std::vector<sf::Sprite> landSpriteVec = _landPtr->GetSpriteLandVec();
 
           for (unsigned int i = 0; i < landSpriteVec.size(); i++)
           {
-               if (_collision.IsCheckSpriteCollision(_birdPtr->GetSpriteBird(), landSpriteVec.at(i)))
+               if (_collision.IsCheckSpriteCollision(_birdPtr->GetSpriteBird(), SCALE_LAND1, landSpriteVec.at(i), SCALE_LAND2))
+               {
+                    _gameState = GameStates::E_GameOver;
+               }
+          }
+
+          // Pipes sprite collision detected
+          std::vector<sf::Sprite> pipeSpriteVec = _pipePtr->GetSpritePipesVec();
+
+          for (unsigned int i = 0; i < pipeSpriteVec.size(); i++)
+          {
+               if (_collision.IsCheckSpriteCollision(_birdPtr->GetSpriteBird(), SCALE_PIPE1, pipeSpriteVec.at(i), SCALE_PIPE2))
                {
                     _gameState = GameStates::E_GameOver;
                }
