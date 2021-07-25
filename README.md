@@ -24,7 +24,7 @@ sudo apt-get install libsfml-dev
 
 ## Instructions game
 
-This game in still development, so you can't play it now, but you can still see the game in action.
+Just tap - tap the bird and avoid to crash with the pipes and fall to the ground, then you get the score and the game will restart.
 
 ## Simple Docs
 
