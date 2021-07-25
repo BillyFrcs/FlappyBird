@@ -28,6 +28,10 @@
 #define BIRD_ROTATION_SPEED 100.0f
 ///////////////////////////////////////
 
+// Flash speed ////////////
+#define FLASH_SPEED 3000.0f
+///////////////////////////
+
 /*Flappy bird definition to load assets from file path*/
 // Background and main menu /////////////////////////////////////////////////////
 #define SPLASH_BACKGROUND_PATH "assets/textures/game-states/FlappyDay.png"
@@ -42,7 +46,7 @@
 //////////////////////////////////////////////////////////////////////////
 
 // Pipes /////////////////////////////////////////////////////
-#define PIPE_UP_FILEPATH "assets/textures/pipes/PipeUp2.png"
+#define PIPE_UP_FILEPATH "assets/textures/pipes/PipeUp2Red.png"
 #define PIPE_DOWN_FILEPATH "assets/textures/pipes/PipeDown2.png"
 //////////////////////////////////////////////////////////////
 
