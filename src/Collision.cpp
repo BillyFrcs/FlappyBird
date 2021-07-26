@@ -25,8 +25,8 @@ bool BillyEngine::Collision::IsCheckSpriteCollision(sf::Sprite spriteParam1, sf:
 
 bool BillyEngine::Collision::IsCheckSpriteCollision(sf::Sprite spriteParam1, float scaleParam1, sf::Sprite spriteParam2, float scaleParam2)
 {
-     spriteParam1.setScale(scaleParam1, scaleParam2);
-     spriteParam2.setScale(scaleParam1, scaleParam2);
+     spriteParam1.setScale(scaleParam1, scaleParam1);
+     spriteParam2.setScale(scaleParam2, scaleParam2);
 
      sf::Rect<float> rectangle1 = spriteParam1.getGlobalBounds();
      sf::Rect<float> rectangle2 = spriteParam2.getGlobalBounds();
