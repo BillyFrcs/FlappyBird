@@ -3,7 +3,9 @@
 #include "GameState.hpp"
 #include "MainMenuState.hpp"
 
-BillyEngine::GameOverState::GameOverState(GameDataPtr gameData) : _gameData(gameData)
+#define CHARACTER_SIZE 55
+
+BillyEngine::GameOverState::GameOverState(GameDataPtr gameData, int scoreParam) : _gameData(gameData), _scoreGame(scoreParam)
 {
 }
 
@@ -26,6 +28,22 @@ void BillyEngine::GameOverState::Init()
      _gameOverContainer.setPosition((_gameData->window.getSize().x / 2 - _gameOverContainer.getGlobalBounds().width / 2), (_gameData->window.getSize().y / 2 - _gameOverContainer.getGlobalBounds().height / 2));
      _gameOverTitle.setPosition((_gameData->window.getSize().x / 2) - (_gameOverTitle.getGlobalBounds().width / 2), _gameOverContainer.getPosition().y - (_gameOverTitle.getGlobalBounds().height * 1.2));
      _retryButtonPlayGame.setPosition((_gameData->window.getSize().x / 2) - (_retryButtonPlayGame.getGlobalBounds().width / 2), _gameOverContainer.getPosition().y + _gameOverContainer.getGlobalBounds().height + (_retryButtonPlayGame.getGlobalBounds().height * 0.2));
+
+     // Set style for score game text
+     _scoreGameText.setFont(_gameData->assets.GetFont("Flappy Font"));
+     _scoreGameText.setString(std::to_string(_scoreGame));
+     _scoreGameText.setCharacterSize(CHARACTER_SIZE);
+     _scoreGameText.setFillColor(sf::Color::White);
+     _scoreGameText.setOrigin(_scoreGameText.getGlobalBounds().width / 2, _scoreGameText.getGlobalBounds().height / 2);
+     _scoreGameText.setPosition(_gameData->window.getSize().x / 10 * 7.25, _gameData->window.getSize().y / 2.15);
+
+     // Set style for high score game text
+     _highScoreGameText.setFont(_gameData->assets.GetFont("Flappy Font"));
+     _highScoreGameText.setString(std::to_string(_highScoreGame));
+     _highScoreGameText.setCharacterSize(CHARACTER_SIZE);
+     _highScoreGameText.setFillColor(sf::Color::White);
+     _highScoreGameText.setOrigin(_highScoreGameText.getGlobalBounds().width / 2, _highScoreGameText.getGlobalBounds().height / 2);
+     _highScoreGameText.setPosition(_gameData->window.getSize().x / 10 * 7.25, _gameData->window.getSize().y / 1.78);
 }
 
 void BillyEngine::GameOverState::HandleInput()
@@ -58,6 +76,8 @@ void BillyEngine::GameOverState::Draw(float deltaTime)
      _gameData->window.draw(_gameOverTitle);
      _gameData->window.draw(_gameOverContainer);
      _gameData->window.draw(_retryButtonPlayGame);
+     _gameData->window.draw(_scoreGameText);
+     _gameData->window.draw(_highScoreGameText);
 
      _gameData->window.display();
 }

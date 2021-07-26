@@ -163,7 +163,7 @@ void BillyEngine::GameState::Update(float deltaTime)
 
           if (_clockGame.getElapsedTime().asSeconds() > TIME_GAME_OVER)
           {
-               _gameData->machine.AddState(StatePtr(new GameOverState(_gameData)), true);
+               _gameData->machine.AddState(StatePtr(new GameOverState(_gameData, _scoreGame)), true);
           }
      }
 }

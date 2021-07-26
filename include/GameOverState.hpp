@@ -2,6 +2,9 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Text.hpp>
+
+#include <string>
 
 #include "Game.hpp"
 #include "State.hpp"
@@ -11,7 +14,7 @@ namespace BillyEngine
     class GameOverState : public State
     {
     public:
-        GameOverState(GameDataPtr gameData);
+        GameOverState(GameDataPtr gameData, int scoreParam);
         ~GameOverState();
 
         void Init();
@@ -26,5 +29,11 @@ namespace BillyEngine
         sf::Sprite _gameOverTitle;
         sf::Sprite _gameOverContainer; // Body game over
         sf::Sprite _retryButtonPlayGame;
+
+        sf::Text _scoreGameText;
+        sf::Text _highScoreGameText;
+
+        int _scoreGame;
+        int _highScoreGame;
     };
 }
