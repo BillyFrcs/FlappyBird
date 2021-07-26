@@ -31,10 +31,13 @@ bool BillyEngine::Collision::IsCheckSpriteCollision(sf::Sprite spriteParam1, flo
      sf::Rect<float> rectangle1 = spriteParam1.getGlobalBounds();
      sf::Rect<float> rectangle2 = spriteParam2.getGlobalBounds();
 
+     /* A little bit long to use this statements
      if (rectangle1.intersects(rectangle2))
      {
           return true;
      }
+     */
 
-     return false;
+     // Just return this to save more time
+     return rectangle1.intersects(rectangle2);
 }

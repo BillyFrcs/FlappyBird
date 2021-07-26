@@ -38,7 +38,7 @@ namespace BillyEngine
         Collision _collision;
 
         sf::Sprite _background;
-        sf::Clock _clock;
+        sf::Clock _clockGame;
 
         int _gameState;
         int _scoreGame;

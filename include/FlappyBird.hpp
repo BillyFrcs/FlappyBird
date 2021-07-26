@@ -32,17 +32,26 @@
 #define FLASH_SPEED 3000.0f
 ///////////////////////////
 
+// Time before game over appears ////
+#define TIME_GAME_OVER 1.0f
+////////////////////////////
+
 /*Flappy bird definition to load assets from file path*/
 // Background and main menu /////////////////////////////////////////////////////
 #define SPLASH_BACKGROUND_PATH "assets/textures/game-states/FlappyDay.png"
 #define MAIN_MENU_BACKGROUND_GAME_PATH "assets/textures/game-states/FlappyDay.png"
 #define GAME_BACKGROUND_PATH "assets/textures/game-states/FlappyNight.png"
-#define GAME_OVER_BACKGROUND_PATH "assets/textures/game-states/FlappyNight.png"
+#define GAME_OVER_BACKGROUND_FILEPATH "assets/textures/game-states/FlappyNight.png"
 //////////////////////////////////////////////////////////////////////////////////
 
+// Game over //////////////////////////////////////////////////////////
+#define GAME_OVER_TITLE_FILEPATH "assets/textures/game-states/GameOverTitle.png"
+#define GAME_OVER_FILEPATH "assets/textures/game-states/GameOver.png"
+///////////////////////////////////////////////////////////////////////
+
 // Title and button //////////////////////////////////////////////////////
-#define GAME_TITLE_PATH "assets/textures/game-states/title.png"
-#define PLAY_BUTTON_GAME_PATH "assets/textures/game-states/PlayButton.png"
+#define GAME_TITLE_PATH "assets/textures/game-states/TitleGame.png"
+#define PLAY_BUTTON_GAME_FILEPATH "assets/textures/game-states/PlayButton.png"
 //////////////////////////////////////////////////////////////////////////
 
 // Pipes /////////////////////////////////////////////////////

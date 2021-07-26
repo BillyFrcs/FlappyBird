@@ -17,7 +17,7 @@ void BillyEngine::MainMenuState::Init()
 {
      _gameData->assets.LoadTexture("Main Menu Background", MAIN_MENU_BACKGROUND_GAME_PATH);
      _gameData->assets.LoadTexture("Title Game", GAME_TITLE_PATH);
-     _gameData->assets.LoadTexture("Play Button Game", PLAY_BUTTON_GAME_PATH);
+     _gameData->assets.LoadTexture("Play Button Game", PLAY_BUTTON_GAME_FILEPATH);
 
      _background.setTexture(this->_gameData->assets.GetTexture("Main Menu Background"));
      _title.setTexture(this->_gameData->assets.GetTexture("Title Game"));

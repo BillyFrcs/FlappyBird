@@ -1,8 +1,9 @@
-#include "GameState.hpp"
-#include "FlappyBird.hpp"
-#include "MainMenuState.hpp"
-
 #include <iostream>
+
+#include "FlappyBird.hpp"
+#include "GameOverState.hpp"
+#include "GameState.hpp"
+#include "MainMenuState.hpp"
 
 /* Didn't using this definition 
 #define SCALE_LAND1 0.7f
@@ -96,7 +97,7 @@ void BillyEngine::GameState::Update(float deltaTime)
      {
           _pipePtr->MovePipes(deltaTime);
 
-          if (_clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FREQUENCY)
+          if (_clockGame.getElapsedTime().asSeconds() > PIPE_SPAWN_FREQUENCY)
           {
                _pipePtr->RandomPipesOffset();
                _pipePtr->SpawnInvisiblePipe();
@@ -104,7 +105,7 @@ void BillyEngine::GameState::Update(float deltaTime)
                _pipePtr->SpawnTopPipe();
                _pipePtr->SpawnScoringPipes();
 
-               _clock.restart();
+               _clockGame.restart();
           }
 
           _birdPtr->Update(deltaTime);
@@ -117,6 +118,8 @@ void BillyEngine::GameState::Update(float deltaTime)
                if (_collision.IsCheckSpriteCollision(_birdPtr->GetSpriteBird(), 0.7f, landSpriteVec.at(i), 1.0f))
                {
                     _gameState = GameStates::E_GameOver;
+
+                    _clockGame.restart();
                }
           }
 
@@ -128,6 +131,8 @@ void BillyEngine::GameState::Update(float deltaTime)
                if (_collision.IsCheckSpriteCollision(_birdPtr->GetSpriteBird(), 0.625f, pipeSpriteVec.at(i), 1.0f))
                {
                     _gameState = GameStates::E_GameOver;
+
+                    _clockGame.restart();
                }
           }
 
@@ -155,6 +160,11 @@ void BillyEngine::GameState::Update(float deltaTime)
      if (GameStates::E_GameOver == _gameState)
      {
           _flashPtr->ShowFlash(deltaTime);
+
+          if (_clockGame.getElapsedTime().asSeconds() > TIME_GAME_OVER)
+          {
+               _gameData->machine.AddState(StatePtr(new GameOverState(_gameData)), true);
+          }
      }
 }
 

@@ -23,5 +23,8 @@ namespace BillyEngine
         GameDataPtr _gameData;
 
         sf::Sprite _background;
+        sf::Sprite _gameOverTitle;
+        sf::Sprite _gameOverContainer; // Body game over
+        sf::Sprite _retryButtonPlayGame;
     };
 }
