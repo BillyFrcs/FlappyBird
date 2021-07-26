@@ -2,4 +2,4 @@
 bin/
 
 # .txt file for high scores
-.txt
+*.txt
