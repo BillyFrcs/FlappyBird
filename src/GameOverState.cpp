@@ -1,5 +1,9 @@
-#include "GameOverState.hpp"
+#include <fstream>
+#include <iostream>
+#include <string>
+
 #include "FlappyBird.hpp"
+#include "GameOverState.hpp"
 #include "GameState.hpp"
 #include "MainMenuState.hpp"
 
@@ -15,6 +19,36 @@ BillyEngine::GameOverState::~GameOverState()
 
 void BillyEngine::GameOverState::Init()
 {
+     // Saving the high score into .txt file
+     std::ifstream readFileHighScore; // Read the file
+
+     readFileHighScore.open("Your_HighScoreGame.txt"); // Can set the file path or directory location to save it
+
+     if (readFileHighScore.is_open())
+     {
+          while (!readFileHighScore.eof()) // End of file
+          {
+               readFileHighScore >> _highScoreGame;
+          }
+     }
+
+     readFileHighScore.close();
+
+     // Write the file
+     std::ofstream writeFileHighScore("Your_HighScoreGame.txt"); // Can set the file path or directory location to save it
+
+     if (writeFileHighScore.is_open())
+     {
+          if (_scoreGame > _highScoreGame)
+          {
+               _highScoreGame = _scoreGame;
+          }
+
+          writeFileHighScore << _highScoreGame;
+     }
+
+     writeFileHighScore.close();
+
      _gameData->assets.LoadTexture("Game Over Background", GAME_OVER_BACKGROUND_FILEPATH);
      _gameData->assets.LoadTexture("Game Over Title", GAME_OVER_TITLE_FILEPATH);
      _gameData->assets.LoadTexture("Game Over", GAME_OVER_FILEPATH);

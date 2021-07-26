@@ -4,8 +4,6 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
 
-#include <string>
-
 #include "Game.hpp"
 #include "State.hpp"
 
