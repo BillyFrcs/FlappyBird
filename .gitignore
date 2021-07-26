@@ -1,9 +1,5 @@
 # Binary folder and file
 bin/
 
-<<<<<<< HEAD
 # .txt file for high scores
-=======
-# .txt file
->>>>>>> 749a57c52b126d645198f663dbd071d15aa3e8cd
 .txt
