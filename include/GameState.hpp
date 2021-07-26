@@ -10,6 +10,7 @@
 #include "Game.hpp"
 #include "Land.hpp"
 #include "Pipes.hpp"
+#include "ScoreGame.hpp"
 #include "State.hpp"
 
 namespace BillyEngine
@@ -32,6 +33,7 @@ namespace BillyEngine
         Land *_landPtr;
         Bird *_birdPtr;
         Flash *_flashPtr;
+        ScoreGame *_scorePtr;
 
         Collision _collision;
 

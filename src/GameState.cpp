@@ -39,14 +39,19 @@ void BillyEngine::GameState::Init()
      _gameData->assets.LoadTexture("Bird Frame 3", BIRD_FRAME3_FILEPATH);
      _gameData->assets.LoadTexture("Bird Frame 4", BIRD_FRAME4_FILEPATH);
 
-     _pipePtr = new Pipes(_gameData);  // Pipes
-     _landPtr = new Land(_gameData);   // Land
-     _birdPtr = new Bird(_gameData);   // Bird frames
-     _flashPtr = new Flash(_gameData); // Flash
+     // Load fonts
+     _gameData->assets.LoadFont("Flappy Font", FLAPPY_FONT_FILEPATH);
+
+     _pipePtr = new Pipes(_gameData);      // Pipes
+     _landPtr = new Land(_gameData);       // Land
+     _birdPtr = new Bird(_gameData);       // Bird frames
+     _flashPtr = new Flash(_gameData);     // Flash
+     _scorePtr = new ScoreGame(_gameData); // Score game
 
      _background.setTexture(this->_gameData->assets.GetTexture("Game Background"));
 
      _scoreGame = 0;
+     _scorePtr->UpdateScore(_scoreGame);
 
      _gameState = GameStates::E_GameReady;
 }
@@ -136,9 +141,10 @@ void BillyEngine::GameState::Update(float deltaTime)
                     if (_collision.IsCheckSpriteCollision(_birdPtr->GetSpriteBird(), 0.600f, pipeScoringSpriteVec.at(i), 1.0f))
                     {
                          _scoreGame++;
+                         _scorePtr->UpdateScore(_scoreGame); // Update the score
 
                          // Check if the score is count or not in the console
-                         std::cout << _scoreGame << std::endl;
+                         //std::cout << _scoreGame << std::endl;
 
                          pipeScoringSpriteVec.erase(pipeScoringSpriteVec.begin() + i);
                     }
@@ -162,6 +168,7 @@ void BillyEngine::GameState::Draw(float deltaTime)
      _landPtr->DrawLand();   // Draw the land on the screen
      _birdPtr->DrawBird();   // Draw bird
      _flashPtr->DrawFlash(); // Draw the flash
+     _scorePtr->DrawScore(); // Draw the score
 
      _gameData->window.display();
 }
