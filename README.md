@@ -4,7 +4,7 @@ Flappy Bird game made with C++/SFML library framework.
 
 ## Getting started
 
-- Clone or download this repository, and open in your favorite IDE or text editor (Recommended using VS Code) on linux.
+- Clone or download this repository, and open in your favorite IDE or text editor (Recommended using Visual studio code).
 
 ```
 git clone https://github.com/BillyFrcs/FlappyBird.git
@@ -32,6 +32,6 @@ To see the all the code go to "include" for .hpp files and "src" for .cpp files 
 
 Just for information, the main cpp file is FlappyBird.cpp is used to create and run the game.
 
-> Note: This game only available and running on Linux :) but if you want to running on Windows or MacOS, you can do it, just follow this [tutorial](https://www.sfml-dev.org/tutorials/2.5/).
+> Note: This game only available and running on Linux 😃 but if you want to running on Windows or MacOS, you can do it, just follow this [tutorial](https://www.sfml-dev.org/tutorials/2.5/).
 
 <i>© Billy Franscois</i>
