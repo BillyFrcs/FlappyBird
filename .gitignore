@@ -1,2 +1,5 @@
 # Binary folder and file
 bin/
+
+# .txt file for high scores
+.txt
