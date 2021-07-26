@@ -14,7 +14,7 @@ git clone https://github.com/BillyFrcs/FlappyBird.git
 
 - Create new "bin" folder without using quotation marks terminal on text editor.
 - First type `make` on terminal, second type `bin/FlappyBird` that's it if it doesn't work you need to run `make clean` first to clean the executable file and cache, to debug you need to Run and Debug (f5) and to build you can run Build & Run(f7) but you need to install cmake extension on VS Code.
-- Make sure to already installed SFML on linux system, follow the setup and installation from [here](https://www.sfml-dev.org/tutorials/2.5/start-linux.php).
+- Make sure to already download or installed SFML on your OS, follow the setup and installation from [here](https://www.sfml-dev.org/tutorials/2.5/).
 
 Copy and paste the syntax below on your terminal to install SFML library if you're using debian or ubuntu based system.
 
@@ -32,6 +32,6 @@ To see the all the code go to "include" for .hpp files and "src" for .cpp files 
 
 Just for information, the main cpp file is FlappyBird.cpp is used to create and run the game.
 
-> Note: This game only available and running on Linux :) but if you want to running on Windows or MacOS, you can do it, just follow the instructions from [here](https://www.sfml-dev.org/tutorials/2.5/start-windows.php) for Windows or [this](https://www.sfml-dev.org/tutorials/2.5/start-macos.php) for MacOs.
+> Note: This game only available and running on Linux :) but if you want to running on Windows or MacOS, you can do it, just follow this [tutorial](https://www.sfml-dev.org/tutorials/2.5/).
 
 <i>© Billy Franscois</i>
