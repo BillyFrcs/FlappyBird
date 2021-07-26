@@ -28,7 +28,7 @@ Just tap - tap the bird and avoid to crash with the pipes and fall to the ground
 
 ## Simple Docs
 
-To see the all the code go to "include" for .hpp files and "src" for .cpp files and "assets" for all the resources of this game.
+To see the all the codes go to "include" for .hpp files and "src" for .cpp files and "assets" folder for all the resources of this game.
 
 Just for information, the main cpp file is FlappyBird.cpp is used to create and run the game.
 
