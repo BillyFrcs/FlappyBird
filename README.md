@@ -12,8 +12,8 @@ git clone https://github.com/BillyFrcs/FlappyBird.git
 
 ## Run and play Flappy Bird
 
-- Create new "bin" folder without using quotation marks terminal on text editor.
-- First type `make` on terminal, second type `bin/FlappyBird` that's it if it doesn't work you need to run `make clean` first to clean the executable file and cache, to debug you need to Run and Debug(f5) and to build you can run Build & Run(f7) but you need to install cmake extension on VS Code.
+- Create new "bin" folder without using quotation marks then open new terminal on text editor.
+- First type `make` on terminal, second type `bin/FlappyBird` then compiled it that's, it if it doesn't work you need to run `make clean` first to clean the executable file and cache, to debug you just Run and Debug(f5) and to build you can run Build & Run(f7).
 - Make sure to already download or installed SFML on your OS, follow the setup and installation from [here](https://www.sfml-dev.org/tutorials/2.5/).
 
 Copy and paste the syntax below on your terminal to install SFML library if you're using debian or ubuntu based system.
