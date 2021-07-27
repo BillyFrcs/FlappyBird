@@ -14,7 +14,7 @@ git clone https://github.com/BillyFrcs/FlappyBird.git
 
 - Create new "bin" folder without using quotation marks for create binary or executable file, then open new terminal on text editor or IDE.
 - First type `make` on terminal, second type `bin/FlappyBird` then compiled it that's it, to debug you just Run and Debug(f5) and to build you can run Build & Run(f7).
-- Make sure to already download or installed SFML on your OS, follow the setup and installation from [here](https://www.sfml-dev.org/tutorials/2.5/).
+- Make sure to already download or installed SFML and C++ compiler on your OS, follow the setup and installation from [here](https://www.sfml-dev.org/tutorials/2.5/).
 
 Copy and paste the syntax below on your terminal to install SFML library if you're using debian or ubuntu based system.
 
