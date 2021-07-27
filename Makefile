@@ -6,9 +6,9 @@ SRC		:= src
 INCLUDE	:= include
 LIB		:= lib
 
-#Get the SFML library and paste here.
+# Get the SFML library and paste here.
 LIBRARIES	:= -lsfml-graphics -lsfml-window -lsfml-audio -lsfml-system
-EXECUTABLE	:= FlappyBird #This is the file executable when running the game
+EXECUTABLE	:= FlappyBird # This is the file executable when running the game
 
 all: $(BIN)/$(EXECUTABLE)
 
