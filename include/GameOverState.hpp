@@ -27,6 +27,7 @@ namespace BillyEngine
         sf::Sprite _gameOverTitle;
         sf::Sprite _gameOverContainer; // Body game over
         sf::Sprite _retryButtonPlayGame;
+        sf::Sprite _medalsGame;
 
         sf::Text _scoreGameText;
         sf::Text _highScoreGameText;

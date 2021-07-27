@@ -8,6 +8,8 @@
 #include "MainMenuState.hpp"
 
 #define CHARACTER_SIZE 55
+#define MEDAL_X_CORDINATE 175
+#define MEDAL_Y_CORDINATE 465
 
 BillyEngine::GameOverState::GameOverState(GameDataPtr gameData, int scoreParam) : _gameData(gameData), _scoreGame(scoreParam)
 {
@@ -49,10 +51,16 @@ void BillyEngine::GameOverState::Init()
 
      writeFileHighScore.close();
 
+     // Load texture
      _gameData->assets.LoadTexture("Game Over Background", GAME_OVER_BACKGROUND_FILEPATH);
      _gameData->assets.LoadTexture("Game Over Title", GAME_OVER_TITLE_FILEPATH);
      _gameData->assets.LoadTexture("Game Over", GAME_OVER_FILEPATH);
+     _gameData->assets.LoadTexture("Bronze Medal", BRONZE_MEDAL_FILEPATH);
+     _gameData->assets.LoadTexture("Silver Medal", SILVER_MEDAL_FILEPATH);
+     _gameData->assets.LoadTexture("Gold Medal", GOLD_MEDAL_FILEPATH);
+     _gameData->assets.LoadTexture("Platinum Medal", PLATINUM_MEDAL_FILEPATH);
 
+     // Set texture
      _background.setTexture(this->_gameData->assets.GetTexture("Game Over Background"));
      _gameOverTitle.setTexture(this->_gameData->assets.GetTexture("Game Over Title"));
      _gameOverContainer.setTexture(this->_gameData->assets.GetTexture("Game Over"));
@@ -78,6 +86,27 @@ void BillyEngine::GameOverState::Init()
      _highScoreGameText.setFillColor(sf::Color::White);
      _highScoreGameText.setOrigin(_highScoreGameText.getGlobalBounds().width / 2, _highScoreGameText.getGlobalBounds().height / 2);
      _highScoreGameText.setPosition(_gameData->window.getSize().x / 10 * 7.25, _gameData->window.getSize().y / 1.78);
+
+     // Get the medal statement
+     if (_scoreGame >= PLATINUM_MEDAL)
+     {
+          _medalsGame.setTexture(_gameData->assets.GetTexture("Platinum Medal"));
+     }
+     else if (_scoreGame >= GOLD_MEDAL)
+     {
+          _medalsGame.setTexture(_gameData->assets.GetTexture("Gold Medal"));
+     }
+     else if (_scoreGame >= SILVER_MEDAL)
+     {
+          _medalsGame.setTexture(_gameData->assets.GetTexture("Silver Medal"));
+     }
+     else
+     {
+          _medalsGame.setTexture(_gameData->assets.GetTexture("Bronze Medal"));
+     }
+
+     // Set medal position
+     _medalsGame.setPosition(MEDAL_X_CORDINATE, MEDAL_Y_CORDINATE);
 }
 
 void BillyEngine::GameOverState::HandleInput()
@@ -112,6 +141,7 @@ void BillyEngine::GameOverState::Draw(float deltaTime)
      _gameData->window.draw(_retryButtonPlayGame);
      _gameData->window.draw(_scoreGameText);
      _gameData->window.draw(_highScoreGameText);
+     _gameData->window.draw(_medalsGame);
 
      _gameData->window.display();
 }
