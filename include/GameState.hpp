@@ -1,5 +1,6 @@
 #pragma once
 
+#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/System/Clock.hpp>
@@ -42,5 +43,16 @@ namespace BillyEngine
 
         int _gameState;
         int _scoreGame;
+
+        /* Create sound effect game */
+        // Set sound buffers
+        sf::SoundBuffer _hitSoundBuffer;
+        sf::SoundBuffer _scorePointSoundBuffer;
+        sf::SoundBuffer _wingSoundBuffer;
+
+        // Playing sound effect
+        sf::Sound _hitSound;
+        sf::Sound _scorePointSound;
+        sf::Sound _wingSound;
     };
 }

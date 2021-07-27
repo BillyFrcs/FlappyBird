@@ -89,6 +89,11 @@
 #define PLATINUM_MEDAL_FILEPATH "assets/textures/medals/PlatinumMedal.png"
 /////////////////////////////////////////////////////////////////////////
 
+// Sounds effect filepath ///////////////////////////////
+#define HIT_SOUND_FILEPATH "assets/sounds/Hit.wav"
+#define SCORE_POINT_SOUND_FILEPATH "assets/sounds/Point.wav"
+#define WING_SOUND_FILEPATH "assets/sounds/Wing.wav"
+
 // Window screen size ////////////////////////////////
 enum WindowScreenSize
 {

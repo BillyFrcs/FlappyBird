@@ -23,6 +23,24 @@ BillyEngine::GameState::~GameState()
 
 void BillyEngine::GameState::Init()
 {
+     // Set sound effect buffer
+     if (!_hitSoundBuffer.loadFromFile(HIT_SOUND_FILEPATH))
+     {
+          std::cout << "Error load hit sound buffer\n";
+     }
+     if (!_scorePointSoundBuffer.loadFromFile(SCORE_POINT_SOUND_FILEPATH))
+     {
+          std::cout << "Error load score point sound buffer\n";
+     }
+     if (!_wingSoundBuffer.loadFromFile(WING_SOUND_FILEPATH))
+     {
+          std::cout << "Error load wing sound buffer\n";
+     }
+
+     _hitSound.setBuffer(_hitSoundBuffer);
+     _scorePointSound.setBuffer(_scorePointSoundBuffer);
+     _wingSound.setBuffer(_wingSoundBuffer);
+
      // Load background
      _gameData->assets.LoadTexture("Game Background", GAME_BACKGROUND_PATH);
 
@@ -80,6 +98,8 @@ void BillyEngine::GameState::HandleInput()
                {
                     _gameState = GameStates::E_PlayingGame;
                     _birdPtr->TapBird();
+
+                    _wingSound.play(); // Play wing sound
                }
           }
      }
@@ -120,6 +140,8 @@ void BillyEngine::GameState::Update(float deltaTime)
                     _gameState = GameStates::E_GameOver;
 
                     _clockGame.restart();
+
+                    _hitSound.play(); // Play hit sound
                }
           }
 
@@ -133,6 +155,8 @@ void BillyEngine::GameState::Update(float deltaTime)
                     _gameState = GameStates::E_GameOver;
 
                     _clockGame.restart();
+
+                    _hitSound.play(); // Play hit sound
                }
           }
 
@@ -152,6 +176,8 @@ void BillyEngine::GameState::Update(float deltaTime)
                          //std::cout << _scoreGame << std::endl;
 
                          pipeScoringSpriteVec.erase(pipeScoringSpriteVec.begin() + i);
+
+                         _scorePointSound.play(); // Play score point sound
                     }
                }
           }
