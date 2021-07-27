@@ -24,6 +24,8 @@ BillyEngine::GameState::~GameState()
 void BillyEngine::GameState::Init()
 {
      // Set sound effect buffer
+
+     /* Use this to debug sound
      if (!_hitSoundBuffer.loadFromFile(HIT_SOUND_FILEPATH))
      {
           std::cout << "Error load hit sound buffer\n";
@@ -35,11 +37,17 @@ void BillyEngine::GameState::Init()
      if (!_wingSoundBuffer.loadFromFile(WING_SOUND_FILEPATH))
      {
           std::cout << "Error load wing sound buffer\n";
-     }
+     }*/
 
-     _hitSound.setBuffer(_hitSoundBuffer);
-     _scorePointSound.setBuffer(_scorePointSoundBuffer);
-     _wingSound.setBuffer(_wingSoundBuffer);
+     // Load sound
+     _gameData->assets.LoadSound("Hit Sound", HIT_SOUND_FILEPATH);
+     _gameData->assets.LoadSound("Score Point Sound", SCORE_POINT_SOUND_FILEPATH);
+     _gameData->assets.LoadSound("Wing Sound", WING_SOUND_FILEPATH);
+
+     // Set the buffers
+     _hitSound.setBuffer(_gameData->assets.GetSoundBuffer("Hit Sound"));
+     _scorePointSound.setBuffer(_gameData->assets.GetSoundBuffer("Score Point Sound"));
+     _wingSound.setBuffer(_gameData->assets.GetSoundBuffer("Wing Sound"));
 
      // Load background
      _gameData->assets.LoadTexture("Game Background", GAME_BACKGROUND_PATH);
