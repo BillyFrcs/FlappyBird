@@ -24,7 +24,7 @@ void BillyEngine::GameOverState::Init()
      // Saving the high score into .txt file
      std::ifstream readFileHighScore; // Read the file
 
-     readFileHighScore.open("Your_HighScoreGame.txt"); // Can set the file path or directory location to save it
+     readFileHighScore.open("Your_HighScoreGame_FlappyBird.txt"); // Can set the file path or directory location to save it
 
      if (readFileHighScore.is_open())
      {
@@ -37,11 +37,7 @@ void BillyEngine::GameOverState::Init()
      readFileHighScore.close();
 
      // Write the file
-     std::ofstream writeFileHighScore("Your_HighScoreGame.txt"); // Can set the file path or directory location to save it
-
-     const std::string message = "Your high score Flappy Bird is: ";
-     const std::string attention = ", please do not modify or delete this file!";
-     const std::string credit = " | Made with ❤️ by Billy Franscois :)";
+     std::ofstream writeFileHighScore("Your_HighScoreGame_FlappyBird.txt"); // Can set the file path or directory location to save it
 
      if (writeFileHighScore.is_open())
      {
@@ -49,11 +45,7 @@ void BillyEngine::GameOverState::Init()
           {
                _highScoreGame = _scoreGame;
           }
-
-          writeFileHighScore << message;
-          writeFileHighScore << _highScoreGame << attention;
-
-          writeFileHighScore << credit;
+          writeFileHighScore << _highScoreGame;
      }
 
      writeFileHighScore.close();
