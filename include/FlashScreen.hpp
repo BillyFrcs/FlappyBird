@@ -8,11 +8,11 @@
 namespace BillyEngine
 {
     // Flash white
-    class Flash
+    class FlashScreen
     {
     public:
-        Flash(GameDataPtr _gameData);
-        ~Flash();
+        FlashScreen(GameDataPtr _gameData);
+        ~FlashScreen();
 
         void ShowFlash(float deltaTime);
         void DrawFlash();

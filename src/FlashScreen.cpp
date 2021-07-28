@@ -1,6 +1,6 @@
-#include "Flash.hpp"
+#include "FlashScreen.hpp"
 
-BillyEngine::Flash::Flash(GameDataPtr gameData) : _gameData(gameData)
+BillyEngine::FlashScreen::FlashScreen(GameDataPtr gameData) : _gameData(gameData)
 {
      _shape = sf::RectangleShape(sf::Vector2f(_gameData->window.getSize()));
      _shape.setFillColor(sf::Color(255, 255, 255, 0));
@@ -8,11 +8,11 @@ BillyEngine::Flash::Flash(GameDataPtr gameData) : _gameData(gameData)
      _isFlashOn = true;
 }
 
-BillyEngine::Flash::~Flash()
+BillyEngine::FlashScreen::~FlashScreen()
 {
 }
 
-void BillyEngine::Flash::ShowFlash(float deltaTime)
+void BillyEngine::FlashScreen::ShowFlash(float deltaTime)
 {
      if (_isFlashOn)
      {
@@ -40,7 +40,7 @@ void BillyEngine::Flash::ShowFlash(float deltaTime)
      }
 }
 
-void BillyEngine::Flash::DrawFlash()
+void BillyEngine::FlashScreen::DrawFlash()
 {
      _gameData->window.draw(_shape);
 }

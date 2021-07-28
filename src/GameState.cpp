@@ -75,11 +75,11 @@ void BillyEngine::GameState::Init()
      // Load fonts
      _gameData->assets.LoadFont("Flappy Font", FLAPPY_FONT_FILEPATH);
 
-     _pipePtr = new Pipes(_gameData);      // Pipes
-     _landPtr = new Land(_gameData);       // Land
-     _birdPtr = new Bird(_gameData);       // Bird frames
-     _flashPtr = new Flash(_gameData);     // Flash
-     _scorePtr = new ScoreGame(_gameData); // Score game
+     _pipePtr = new Pipes(_gameData);        // Pipes
+     _landPtr = new Land(_gameData);         // Land
+     _birdPtr = new Bird(_gameData);         // Bird frames
+     _flashPtr = new FlashScreen(_gameData); // Flash
+     _scorePtr = new ScoreGame(_gameData);   // Score game
 
      _background.setTexture(this->_gameData->assets.GetTexture("Game Background"));
 

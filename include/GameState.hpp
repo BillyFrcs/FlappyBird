@@ -7,7 +7,7 @@
 
 #include "Bird.hpp"
 #include "Collision.hpp"
-#include "Flash.hpp"
+#include "FlashScreen.hpp"
 #include "Game.hpp"
 #include "Land.hpp"
 #include "Pipes.hpp"
@@ -33,7 +33,7 @@ namespace BillyEngine
         Pipes *_pipePtr;
         Land *_landPtr;
         Bird *_birdPtr;
-        Flash *_flashPtr;
+        FlashScreen *_flashPtr;
         ScoreGame *_scorePtr;
 
         Collision _collision;
