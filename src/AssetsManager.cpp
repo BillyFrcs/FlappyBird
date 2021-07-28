@@ -40,7 +40,7 @@ sf::Font &BillyEngine::AssetsManager::GetFont(std::string name)
      return this->_fonts.at(name);
 }
 
-/*
+/* Still have bugs with this method when load sound buffer
 // Load sound
 void BillyEngine::AssetsManager::LoadSound(std::string name, std::string fileName)
 {
