@@ -7,9 +7,9 @@
 #include "GameState.hpp"
 #include "MainMenuState.hpp"
 
-#define CHARACTER_SIZE 55
-#define MEDAL_X_CORDINATE 175
-#define MEDAL_Y_CORDINATE 465
+#define CHARACTER_SIZE 30
+#define MEDAL_X_CORDINATE 382
+#define MEDAL_Y_CORDINATE 314
 
 BillyEngine::GameOverState::GameOverState(GameDataPtr gameData, int scoreParam) : _gameData(gameData), _scoreGame(scoreParam)
 {
@@ -59,11 +59,15 @@ void BillyEngine::GameOverState::Init()
      _gameData->assets.LoadTexture("Gold Medal", GOLD_MEDAL_FILEPATH);
      _gameData->assets.LoadTexture("Platinum Medal", PLATINUM_MEDAL_FILEPATH);
 
+     // Load sound
+     _gameData->assets.LoadSound("Sound Retry Game", SCORE_POINT_SOUND_FILEPATH);
+
      // Set texture
      _background.setTexture(this->_gameData->assets.GetTexture("Game Over Background"));
      _gameOverTitle.setTexture(this->_gameData->assets.GetTexture("Game Over Title"));
      _gameOverContainer.setTexture(this->_gameData->assets.GetTexture("Game Over"));
      _retryButtonPlayGame.setTexture(this->_gameData->assets.GetTexture("Play Button Game"));
+     _soundRetryGame.setBuffer(_gameData->assets.GetSoundBuffer("Sound Retry Game"));
 
      // Set position game over
      _gameOverContainer.setPosition((_gameData->window.getSize().x / 2 - _gameOverContainer.getGlobalBounds().width / 2), (_gameData->window.getSize().y / 2 - _gameOverContainer.getGlobalBounds().height / 2));
@@ -105,7 +109,7 @@ void BillyEngine::GameOverState::Init()
      }
 
      // Set medal position
-     _medalsGame.setPosition(MEDAL_X_CORDINATE, MEDAL_Y_CORDINATE);
+     _medalsGame.setPosition(_gameData->window.getSize().x - MEDAL_X_CORDINATE, MEDAL_Y_CORDINATE);
 }
 
 void BillyEngine::GameOverState::HandleInput()
@@ -122,6 +126,8 @@ void BillyEngine::GameOverState::HandleInput()
           if (_gameData->input.IsSpriteClicked(_retryButtonPlayGame, sf::Mouse::Left, _gameData->window))
           {
                _gameData->machine.AddState(StatePtr(new GameState(_gameData)), true);
+
+               _soundRetryGame.play(); // Play the sound
           }
      }
 }

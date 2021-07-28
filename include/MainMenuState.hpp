@@ -1,5 +1,6 @@
 #pragma once
 
+#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 
@@ -25,5 +26,7 @@ namespace BillyEngine
         sf::Sprite _background;
         sf::Sprite _title;
         sf::Sprite _playButton;
+
+        sf::Sound _soundPlay;
     };
 }

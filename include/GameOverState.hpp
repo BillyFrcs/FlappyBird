@@ -1,9 +1,11 @@
 #pragma once
 
+#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
 
+#include "AssetsManager.hpp"
 #include "Game.hpp"
 #include "State.hpp"
 
@@ -34,5 +36,7 @@ namespace BillyEngine
 
         int _scoreGame;
         int _highScoreGame;
+
+        sf::Sound _soundRetryGame;
     };
 }
