@@ -10,19 +10,19 @@
 */
 
 // Movements and frequency ////////
-#define PIPE_MOVEMENT_SPEED 300.0f
-#define PIPE_SPAWN_FREQUENCY 1.6f
+#define PIPE_MOVEMENT_SPEED 200.0f
+#define PIPE_SPAWN_FREQUENCY 1.2f
 //////////////////////////////////
 
 // Bird animations //////////////////////
-#define BIRD_ANIMATION_FLYING_TIME 0.4f
+#define BIRD_ANIMATION_FLYING_TIME 0.5f
 
 #define BIRD_STATE_STILL 1
 #define BIRD_STATE_FALLING 2
 #define BIRD_STATE_FLYING 3
 
-#define BIRD_GRAVITY 350.0f
-#define BIRD_FLYING_SPEED 350.0f
+#define BIRD_GRAVITY 300.0f
+#define BIRD_FLYING_SPEED 300.0f
 #define BIRD_FLYING_DURATION 0.25f
 
 #define BIRD_ROTATION_SPEED 100.0f
@@ -53,7 +53,7 @@
 
 // Game over filepath ///////////////////////////////////////////////////////////
 #define GAME_OVER_TITLE_FILEPATH "assets/textures/game-states/GameOverTitle.png"
-#define GAME_OVER_FILEPATH "assets/textures/game-states/GameOver.png"
+#define GAME_OVER_FILEPATH "assets/textures/game-states/GameOverNew.png"
 ////////////////////////////////////////////////////////////////////////////////
 
 // Title and button filepath ////////////////////////////////////////////////
@@ -62,13 +62,13 @@
 //////////////////////////////////////////////////////////////////////////
 
 // Pipes /////////////////////////////////////////////////////
-#define PIPE_UP_FILEPATH "assets/textures/pipes/PipeUp2Red.png"
-#define PIPE_DOWN_FILEPATH "assets/textures/pipes/PipeDown2.png"
+#define PIPE_UP_FILEPATH "assets/textures/pipes/PipeUp.png"
+#define PIPE_DOWN_FILEPATH "assets/textures/pipes/PipeDown.png"
 #define INVISIBLE_SCORING_PIPE_FILEPATH "assets/textures/pipes/InvisibleScoringPipe.png"
 //////////////////////////////////////////////////////////////
 
 // Land filepath ///////////////////////////////////////////
-#define LAND_FILEPATH "assets/textures/game-states/land.png"
+#define LAND_FILEPATH "assets/textures/game-states/Land.png"
 ///////////////////////////////////////////////////////////
 
 // Birds filepath //////////////////////////////////////////////////
@@ -97,9 +97,8 @@
 // Window screen size ////////////////////////////////
 enum WindowScreenSize
 {
-     // Default width = 768, height 1024 for this game
-     E_Screen_Width = 768,
-     E_Screen_Height = 1024
+     E_Screen_Width = 500,
+     E_Screen_Height = 680
 };
 /////////////////////////////////////////////////////
 
