@@ -11,7 +11,7 @@
 #define MEDAL_X_CORDINATE 382
 #define MEDAL_Y_CORDINATE 314
 
-BillyEngine::GameOverState::GameOverState(GameDataPtr gameData, int scoreParam) : _gameData(gameData), _scoreGame(scoreParam)
+BillyEngine::GameOverState::GameOverState(GameDataPtr gameData, int scoreGame) : _gameData(gameData), _scoreGame(scoreGame)
 {
 }
 

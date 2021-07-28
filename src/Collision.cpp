@@ -23,13 +23,13 @@ bool BillyEngine::Collision::IsCheckSpriteCollision(sf::Sprite spriteParam1, sf:
 }
 */
 
-bool BillyEngine::Collision::IsCheckSpriteCollision(sf::Sprite spriteParam1, float scaleParam1, sf::Sprite spriteParam2, float scaleParam2)
+bool BillyEngine::Collision::IsCheckSpriteCollision(sf::Sprite spriteCollision1, float scaleCollision1, sf::Sprite spriteCollision2, float scaleCollision2)
 {
-     spriteParam1.setScale(scaleParam1, scaleParam1);
-     spriteParam2.setScale(scaleParam2, scaleParam2);
+     spriteCollision1.setScale(scaleCollision1, scaleCollision1);
+     spriteCollision2.setScale(scaleCollision2, scaleCollision2);
 
-     sf::Rect<float> rectangle1 = spriteParam1.getGlobalBounds();
-     sf::Rect<float> rectangle2 = spriteParam2.getGlobalBounds();
+     sf::Rect<float> rectangle1 = spriteCollision1.getGlobalBounds();
+     sf::Rect<float> rectangle2 = spriteCollision2.getGlobalBounds();
 
      /* A little bit long to use this statements
      if (rectangle1.intersects(rectangle2))

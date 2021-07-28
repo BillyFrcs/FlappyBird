@@ -15,7 +15,7 @@ namespace BillyEngine
     class GameOverState : public State
     {
     public:
-        GameOverState(GameDataPtr gameData, int scoreParam);
+        GameOverState(GameDataPtr gameData, int scoreGame);
         ~GameOverState();
 
         void Init();

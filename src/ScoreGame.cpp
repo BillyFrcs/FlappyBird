@@ -19,10 +19,10 @@ BillyEngine::ScoreGame::~ScoreGame()
 {
 }
 
-void BillyEngine::ScoreGame::UpdateScore(int scoreParam)
+void BillyEngine::ScoreGame::UpdateScore(int scoreGame)
 {
      // Convert int score to string
-     _scoreText.setString(std::to_string(scoreParam));
+     _scoreText.setString(std::to_string(scoreGame));
 }
 
 void BillyEngine::ScoreGame::DrawScore()

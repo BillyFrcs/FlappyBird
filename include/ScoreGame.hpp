@@ -16,7 +16,7 @@ namespace BillyEngine
         ScoreGame(GameDataPtr gameDate);
         ~ScoreGame();
 
-        void UpdateScore(int scoreParam);
+        void UpdateScore(int scoreGame);
         void DrawScore();
 
     private:
