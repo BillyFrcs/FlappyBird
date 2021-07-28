@@ -95,6 +95,7 @@ void BillyEngine::Bird::Update(float deltaTime)
 void BillyEngine::Bird::TapBird()
 {
      _movementClockBird.restart();
+
      _birdState = BIRD_STATE_FLYING;
 }
 

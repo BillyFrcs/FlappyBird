@@ -1,6 +1,6 @@
 #include "ScoreGame.hpp"
 
-#define CHARACTER_SIZE 100
+#define CHARACTER_SIZE 50
 
 BillyEngine::ScoreGame::ScoreGame(GameDataPtr gameData) : _gameData(gameData)
 {

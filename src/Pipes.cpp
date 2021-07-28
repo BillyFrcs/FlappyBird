@@ -3,8 +3,8 @@
 #include "FlappyBird.hpp"
 #include "Pipes.hpp"
 
-#define Y_POSITION 0  // Deafault 0
-#define COUNT_RAND 20 // Default 1
+#define Y_POSITION 0 // Deafault 0
+#define COUNT_RAND 1 // Default 1
 
 BillyEngine::Pipes::Pipes(GameDataPtr gameData) : _gameData(gameData)
 {
