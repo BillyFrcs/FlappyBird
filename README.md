@@ -1,5 +1,9 @@
 # Flappy Bird
 
+![Flappy Bird GamePlay](https://github.com/BillyFrcs/FlappyBird/blob/master/assets/example/Image1.png)
+
+![Flappy Bird GamePlay](https://github.com/BillyFrcs/FlappyBird/blob/master/assets/example/Image2.png)
+
 Flappy Bird game made with C++/SFML library framework.
 
 ## Getting started
