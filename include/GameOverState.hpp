@@ -7,6 +7,7 @@
 
 #include "AssetsManager.hpp"
 #include "Game.hpp"
+#include "MainMenuState.hpp"
 #include "State.hpp"
 
 namespace BillyEngine
@@ -37,6 +38,7 @@ namespace BillyEngine
         int _scoreGame;
         int _highScoreGame;
 
+        sf::SoundBuffer _soundRetryGameBuffer;
         sf::Sound _soundRetryGame;
     };
 }

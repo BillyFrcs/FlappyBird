@@ -15,17 +15,29 @@ BillyEngine::MainMenuState::~MainMenuState()
 
 void BillyEngine::MainMenuState::Init()
 {
+     // Load textures
      _gameData->assets.LoadTexture("Main Menu Background", MAIN_MENU_BACKGROUND_GAME_PATH);
      _gameData->assets.LoadTexture("Title Game", GAME_TITLE_PATH);
      _gameData->assets.LoadTexture("Play Button Game", PLAY_BUTTON_GAME_FILEPATH);
-     _gameData->assets.LoadSound("Play Game Sound", SCORE_POINT_SOUND_FILEPATH);
+
+     // Load sound
+     if (!_startGameSoundBuffer.loadFromFile(START_GAME_SOUND_FIlEPATH))
+     {
+          std::cout << "Error loading start sound file" << std::endl;
+     }
+
+     _startGameSound.setBuffer(_startGameSoundBuffer);
+
+     //_gameData->assets.LoadSound("Start Game Sound", START_GAME_SOUND_FIlEPATH);
 
      _background.setTexture(this->_gameData->assets.GetTexture("Main Menu Background"));
      _title.setTexture(this->_gameData->assets.GetTexture("Title Game"));
      _playButton.setTexture(this->_gameData->assets.GetTexture("Play Button Game"));
-     _soundPlay.setBuffer(this->_gameData->assets.GetSoundBuffer("Play Game Sound"));
 
-     // Set position menu x and y
+     // Set sound buffer
+     //_startGameSound.setBuffer(this->_gameData->assets.GetSoundBuffer("Start Game Sound"));
+
+     // Set position main menu x and y
      _title.setPosition((E_Screen_Width / 2) - (_title.getLocalBounds().width / 2), _title.getLocalBounds().height / 2);
      _playButton.setPosition((E_Screen_Width / 2) - (_playButton.getLocalBounds().width / 2), (E_Screen_Height / 2) - (_playButton.getLocalBounds().height / 2));
 }
@@ -34,18 +46,18 @@ void BillyEngine::MainMenuState::HandleInput()
 {
      sf::Event event;
 
-     while (_gameData->window.pollEvent(event))
+     while (this->_gameData->window.pollEvent(event))
      {
           if (sf::Event::Closed == event.type)
           {
-               _gameData->window.close();
+               this->_gameData->window.close();
           }
 
-          if (_gameData->input.IsSpriteClicked(_playButton, sf::Mouse::Left, _gameData->window))
+          if (this->_gameData->input.IsSpriteClicked(this->_playButton, sf::Mouse::Left, this->_gameData->window))
           {
-               _gameData->machine.AddState(StatePtr(new GameState(this->_gameData)));
+               this->_gameData->machine.AddState(StatePtr(new GameState(this->_gameData)));
 
-               _soundPlay.play(); // Play the sound
+               _startGameSound.play(); // Play the sound
                // std::cout << "Go To Game Screen\n";
           }
      }

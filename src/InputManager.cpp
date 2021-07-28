@@ -19,6 +19,7 @@ bool BillyEngine::InputManager::IsSpriteClicked(sf::Sprite object, sf::Mouse::Bu
                return true;
           }
      }
+
      return false;
 }
 

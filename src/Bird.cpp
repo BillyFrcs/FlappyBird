@@ -37,9 +37,11 @@ void BillyEngine::Bird::DrawBird()
 
 void BillyEngine::Bird::BirdAnimation(float deltaTime)
 {
+     deltaTime = 1;
+
      if (_clockBird.getElapsedTime().asSeconds() > BIRD_ANIMATION_FLYING_TIME / _birdAnimationFrames.size())
      {
-          if (_birdAnimationIterator < _birdAnimationFrames.size() - 1)
+          if (_birdAnimationIterator < _birdAnimationFrames.size() - deltaTime)
           {
                _birdAnimationIterator++;
           }

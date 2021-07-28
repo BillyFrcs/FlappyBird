@@ -104,7 +104,7 @@ void BillyEngine::Pipes::RandomPipesOffset()
 void BillyEngine::Pipes::DrawPipes()
 {
      // Get random pipes position
-     for (u_int32_t i = 0; i < _pipesSpriteVec.size(); i++)
+     for (uint32_t i = 0; i < _pipesSpriteVec.size(); i++)
      {
           _gameData->window.draw(_pipesSpriteVec.at(i));
      }

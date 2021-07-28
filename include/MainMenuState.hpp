@@ -27,6 +27,7 @@ namespace BillyEngine
         sf::Sprite _title;
         sf::Sprite _playButton;
 
-        sf::Sound _soundPlay;
+        sf::SoundBuffer _startGameSoundBuffer;
+        sf::Sound _startGameSound;
     };
 }

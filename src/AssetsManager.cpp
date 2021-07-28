@@ -40,6 +40,7 @@ sf::Font &BillyEngine::AssetsManager::GetFont(std::string name)
      return this->_fonts.at(name);
 }
 
+/*
 // Load sound
 void BillyEngine::AssetsManager::LoadSound(std::string name, std::string fileName)
 {
@@ -54,4 +55,4 @@ void BillyEngine::AssetsManager::LoadSound(std::string name, std::string fileNam
 sf::SoundBuffer &BillyEngine::AssetsManager::GetSoundBuffer(std::string name)
 {
      return this->_soundBuffers.at(name);
-}
+}*/

@@ -44,13 +44,11 @@ namespace BillyEngine
         int _gameState;
         int _scoreGame;
 
-        /* Create sound effect game
-        * Didn't using this buffer object cuz already define on AssetsManager
+        //Didn't using this buffer object cuz already define on AssetsManager
         // Set sound buffers
         sf::SoundBuffer _hitSoundBuffer;
         sf::SoundBuffer _scorePointSoundBuffer;
         sf::SoundBuffer _wingSoundBuffer;
-        */
 
         // Playing sound effect
         sf::Sound _hitSound;

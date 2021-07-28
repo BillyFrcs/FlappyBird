@@ -59,15 +59,24 @@ void BillyEngine::GameOverState::Init()
      _gameData->assets.LoadTexture("Gold Medal", GOLD_MEDAL_FILEPATH);
      _gameData->assets.LoadTexture("Platinum Medal", PLATINUM_MEDAL_FILEPATH);
 
-     // Load sound
-     _gameData->assets.LoadSound("Sound Retry Game", SCORE_POINT_SOUND_FILEPATH);
+     // Load sound retry game
+     //_gameData->assets.LoadSound("Sound Retry Game", RETRY_GAME_SOUND_FILEPATH);
+
+     if (!_soundRetryGameBuffer.loadFromFile(RETRY_GAME_SOUND_FILEPATH))
+     {
+          std::cout << "Error loading sound game over \n";
+     }
+
+     _soundRetryGame.setBuffer(_soundRetryGameBuffer);
 
      // Set texture
      _background.setTexture(this->_gameData->assets.GetTexture("Game Over Background"));
      _gameOverTitle.setTexture(this->_gameData->assets.GetTexture("Game Over Title"));
      _gameOverContainer.setTexture(this->_gameData->assets.GetTexture("Game Over"));
      _retryButtonPlayGame.setTexture(this->_gameData->assets.GetTexture("Play Button Game"));
-     _soundRetryGame.setBuffer(_gameData->assets.GetSoundBuffer("Sound Retry Game"));
+
+     // Set sound buffer retry game
+     //_soundRetryGame.setBuffer(this->_gameData->assets.GetSoundBuffer("Sound Retry Game"));
 
      // Set position game over
      _gameOverContainer.setPosition((_gameData->window.getSize().x / 2 - _gameOverContainer.getGlobalBounds().width / 2), (_gameData->window.getSize().y / 2 - _gameOverContainer.getGlobalBounds().height / 2));
@@ -116,16 +125,16 @@ void BillyEngine::GameOverState::HandleInput()
 {
      sf::Event event;
 
-     while (_gameData->window.pollEvent(event))
+     while (this->_gameData->window.pollEvent(event))
      {
           if (sf::Event::Closed == event.type)
           {
-               _gameData->window.close();
+               this->_gameData->window.close();
           }
 
-          if (_gameData->input.IsSpriteClicked(_retryButtonPlayGame, sf::Mouse::Left, _gameData->window))
+          if (this->_gameData->input.IsSpriteClicked(this->_retryButtonPlayGame, sf::Mouse::Left, this->_gameData->window))
           {
-               _gameData->machine.AddState(StatePtr(new GameState(_gameData)), true);
+               this->_gameData->machine.AddState(StatePtr(new GameState(this->_gameData)), true);
 
                _soundRetryGame.play(); // Play the sound
           }

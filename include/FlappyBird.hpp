@@ -53,7 +53,7 @@
 
 // Game over filepath ///////////////////////////////////////////////////////////
 #define GAME_OVER_TITLE_FILEPATH "assets/textures/game-states/GameOverTitle.png"
-#define GAME_OVER_FILEPATH "assets/textures/game-states/GameOverNew.png"
+#define GAME_OVER_FILEPATH "assets/textures/game-states/GameOver.png"
 ////////////////////////////////////////////////////////////////////////////////
 
 // Title and button filepath ////////////////////////////////////////////////
@@ -89,10 +89,14 @@
 #define PLATINUM_MEDAL_FILEPATH "assets/textures/medals/PlatinumMedal.png"
 /////////////////////////////////////////////////////////////////////////
 
-// Sounds effect filepath ///////////////////////////////
+// Sounds effect filepath /////////////////////////////////
 #define HIT_SOUND_FILEPATH "assets/sounds/Hit.wav"
 #define SCORE_POINT_SOUND_FILEPATH "assets/sounds/Point.wav"
 #define WING_SOUND_FILEPATH "assets/sounds/Wing.wav"
+
+#define START_GAME_SOUND_FIlEPATH "assets/sounds/Point.wav"
+#define RETRY_GAME_SOUND_FILEPATH "assets/sounds/Point.wav"
+////////////////////////////////////////////////////////////
 
 // Window screen size ////////////////////////////////
 enum WindowScreenSize
