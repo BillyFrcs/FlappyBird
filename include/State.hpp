@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SFML/System/Time.hpp>
+
 namespace BillyEngine
 {
      class State
@@ -11,7 +13,7 @@ namespace BillyEngine
           virtual void Update(float deltaTime) = 0;
           virtual void Draw(float deltaTime) = 0;
 
-          virtual void Pause() {}
-          virtual void Resume() {}
+          virtual void Pause(){};
+          virtual void Resume(){};
      };
 }
