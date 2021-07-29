@@ -200,7 +200,7 @@ void BillyEngine::GameState::Update(float deltaTime)
 
      if (GameStates::E_GameOver == _gameState)
      {
-          _flashPtr->ShowFlash(deltaTime);
+          _flashPtr->ShowFlash(deltaTime); // Show flash screen
 
           if (_clockGame.getElapsedTime().asSeconds() > TIME_GAME_OVER)
           {
