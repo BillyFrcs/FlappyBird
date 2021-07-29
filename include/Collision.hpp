@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef COLLISION_HANDLING
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 
@@ -17,3 +19,5 @@ namespace BillyEngine
         bool IsCheckSpriteCollision(sf::Sprite spriteCollision1, float scaleCollision1, sf::Sprite spriteCollision2, float scaleCollision2);
     };
 }
+
+#endif

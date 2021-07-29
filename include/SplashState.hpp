@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef SPLASH_STATE
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/System/Clock.hpp>
@@ -27,3 +29,5 @@ namespace BillyEngine
         sf::Sprite _background;
     };
 }
+
+#endif

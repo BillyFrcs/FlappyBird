@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef FLASH_SCREEN
+
 #include <SFML/Graphics.hpp>
 
 #include "FlappyBird.hpp"
@@ -25,3 +27,5 @@ namespace BillyEngine
         bool _isFlashOn;
     };
 }
+
+#endif

@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef GAME_OVER_STATE
+
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
@@ -42,3 +44,5 @@ namespace BillyEngine
         sf::Sound _soundRetryGame;
     };
 }
+
+#endif

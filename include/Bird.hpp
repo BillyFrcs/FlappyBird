@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef BIRD
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/System/Clock.hpp>
@@ -38,3 +40,5 @@ namespace BillyEngine
         float _birdRotation;
     };
 }
+
+#endif

@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef ASSETS_MANAGER
+
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Font.hpp>
@@ -35,3 +37,5 @@ namespace BillyEngine
         //std::map<std::string, sf::SoundBuffer> _soundBuffers;
     };
 }
+
+#endif

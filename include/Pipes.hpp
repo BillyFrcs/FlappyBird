@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef PIPES
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 
@@ -37,3 +39,5 @@ namespace BillyEngine
         int _pipeSpawnYOffset;
     };
 }
+
+#endif

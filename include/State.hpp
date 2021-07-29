@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef STATE
+
 #include <SFML/System/Time.hpp>
 
 namespace BillyEngine
@@ -17,3 +19,5 @@ namespace BillyEngine
           virtual void Resume(){};
      };
 }
+
+#endif

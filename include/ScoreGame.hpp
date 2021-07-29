@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef SCORE_GAME
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/System/String.hpp>
@@ -25,3 +27,5 @@ namespace BillyEngine
         sf::Text _scoreText;
     };
 }
+
+#endif

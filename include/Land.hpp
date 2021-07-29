@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef LAND
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 
@@ -25,3 +27,5 @@ namespace BillyEngine
         std::vector<sf::Sprite> _landSpriteVec;
     };
 }
+
+#endif

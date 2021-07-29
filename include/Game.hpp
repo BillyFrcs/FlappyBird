@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef GAME
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Clock.hpp>
@@ -45,3 +47,5 @@ namespace BillyEngine
         void RunGame();
     };
 }
+
+#endif

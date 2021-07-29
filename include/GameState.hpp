@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef GAME_STATE
+
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
@@ -56,3 +58,5 @@ namespace BillyEngine
         sf::Sound _wingSound;
     };
 }
+
+#endif

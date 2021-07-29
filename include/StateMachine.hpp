@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef STATE_MACHINE
+
 #include <memory>
 #include <stack>
 
@@ -32,3 +34,5 @@ namespace BillyEngine
         bool _isRemoving;
     };
 }
+
+#endif

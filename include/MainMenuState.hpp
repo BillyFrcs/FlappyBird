@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef MAIN_MENU_STATE
+
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
@@ -31,3 +33,5 @@ namespace BillyEngine
         sf::Sound _startGameSound;
     };
 }
+
+#endif
