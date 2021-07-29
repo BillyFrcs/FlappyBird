@@ -10,7 +10,7 @@
 */
 
 // Movements and frequency ////////
-#define PIPE_MOVEMENT_SPEED 200.0f
+#define PIPE_MOVEMENT_SPEED 250.0f
 #define PIPE_SPAWN_FREQUENCY 1.2f
 //////////////////////////////////
 
