@@ -1,6 +1,6 @@
 #include "Bird.hpp"
 
-#define VALUE 0
+constexpr auto VALUE = 0;
 
 BillyEngine::Bird::Bird(GameDataPtr gameData) : _gameData(gameData)
 {
