@@ -10,7 +10,7 @@
 */
 
 // Movements and frequency ////////
-#define PIPE_MOVEMENT_SPEED 250.0f
+#define PIPE_MOVEMENT_SPEED 200.0f
 #define PIPE_SPAWN_FREQUENCY 1.2f
 //////////////////////////////////
 
@@ -21,9 +21,9 @@
 #define BIRD_STATE_FALLING 2
 #define BIRD_STATE_FLYING 3
 
-#define BIRD_GRAVITY 300.0f
-#define BIRD_FLYING_SPEED 300.0f
-#define BIRD_FLYING_DURATION 0.25f
+#define BIRD_GRAVITY 260.0f
+#define BIRD_FLYING_SPEED 260.0f
+#define BIRD_FLYING_DURATION 0.29f
 
 #define BIRD_ROTATION_SPEED 100.0f
 /////////////////////////////////////////
@@ -68,7 +68,7 @@
 //////////////////////////////////////////////////////////////
 
 // Land filepath ///////////////////////////////////////////
-#define LAND_FILEPATH "assets/textures/game-states/Land.png"
+constexpr auto LAND_FILEPATH = "assets/textures/game-states/Land.png";
 ///////////////////////////////////////////////////////////
 
 // Birds filepath //////////////////////////////////////////////////
@@ -79,7 +79,7 @@
 ////////////////////////////////////////////////////////////////////
 
 // Fonts filepath ////////////////////////////////////////
-#define FLAPPY_FONT_FILEPATH "assets/fonts/FlappyFont.ttf"
+constexpr auto FLAPPY_FONT_FILEPATH = "assets/fonts/FlappyFont.ttf";
 //////////////////////////////////////////////////////////
 
 // Medals filepath ///////////////////////////////////////////////////////
