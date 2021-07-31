@@ -60,7 +60,7 @@ void BillyEngine::GameOverState::Init()
      _gameData->assets.LoadTexture("Platinum Medal", PLATINUM_MEDAL_FILEPATH);
 
      // Load sound retry game
-     //_gameData->assets.LoadSound("Sound Retry Game", RETRY_GAME_SOUND_FILEPATH);
+     // _gameData->assets.LoadSound("Sound Retry Game", RETRY_GAME_SOUND_FILEPATH);
 
      if (!_soundRetryGameBuffer.loadFromFile(RETRY_GAME_SOUND_FILEPATH))
      {
@@ -76,7 +76,7 @@ void BillyEngine::GameOverState::Init()
      _retryButtonPlayGame.setTexture(this->_gameData->assets.GetTexture("Play Button Game"));
 
      // Set sound buffer retry game
-     //_soundRetryGame.setBuffer(this->_gameData->assets.GetSoundBuffer("Sound Retry Game"));
+     // _soundRetryGame.setBuffer(this->_gameData->assets.GetSoundBuffer("Sound Retry Game"));
 
      // Set position game over
      _gameOverContainer.setPosition((_gameData->window.getSize().x / 2 - _gameOverContainer.getGlobalBounds().width / 2), (_gameData->window.getSize().y / 2 - _gameOverContainer.getGlobalBounds().height / 2));

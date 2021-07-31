@@ -186,7 +186,7 @@ void BillyEngine::GameState::Update(float deltaTime)
                          _scorePtr->UpdateScore(_scoreGame); // Update the score
 
                          // Check if the score is count or not in the console
-                         //std::cout << _scoreGame << std::endl;
+                         // std::cout << _scoreGame << std::endl;
 
                          pipeScoringSpriteVec.erase(pipeScoringSpriteVec.begin() + i);
 

@@ -73,7 +73,7 @@ void BillyEngine::Pipes::MovePipes(float deltaTime)
 
                _pipesSpriteVec.at(i).move(-movement, Y_POSITION);
           }
-          //std::cout << _pipeSprites.size() << std::endl;
+          // std::cout << _pipeSprites.size() << std::endl;
      }
 
      // Scoring sprite pipes
@@ -91,7 +91,7 @@ void BillyEngine::Pipes::MovePipes(float deltaTime)
 
                _scoringSpritePipesVec.at(i).move(-movement, Y_POSITION);
           }
-          //std::cout << _pipeSprites.size() << std::endl;
+          // std::cout << _pipeSprites.size() << std::endl;
      }
 }
 

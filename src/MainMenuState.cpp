@@ -28,14 +28,14 @@ void BillyEngine::MainMenuState::Init()
 
      _startGameSound.setBuffer(_startGameSoundBuffer);
 
-     //_gameData->assets.LoadSound("Start Game Sound", START_GAME_SOUND_FIlEPATH);
+     // _gameData->assets.LoadSound("Start Game Sound", START_GAME_SOUND_FIlEPATH);
 
      _background.setTexture(this->_gameData->assets.GetTexture("Main Menu Background"));
      _title.setTexture(this->_gameData->assets.GetTexture("Title Game"));
      _playButton.setTexture(this->_gameData->assets.GetTexture("Play Button Game"));
 
      // Set sound buffer
-     //_startGameSound.setBuffer(this->_gameData->assets.GetSoundBuffer("Start Game Sound"));
+     // _startGameSound.setBuffer(this->_gameData->assets.GetSoundBuffer("Start Game Sound"));
 
      // Set position main menu x and y
      _title.setPosition((E_Screen_Width / 2) - (_title.getLocalBounds().width / 2), _title.getLocalBounds().height / 2);
@@ -58,7 +58,7 @@ void BillyEngine::MainMenuState::HandleInput()
                this->_gameData->machine.AddState(StatePtr(new GameState(this->_gameData)));
 
                _startGameSound.play(); // Play the sound
-               // std::cout << "Go To Game Screen\n";
+               // std::cout << "Go To Game Screen \n";
           }
      }
 }
