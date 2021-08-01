@@ -20,10 +20,10 @@ namespace BillyEngine
         GameOverState(GameDataPtr gameData, int scoreGame);
         ~GameOverState();
 
-        void Init();
-        void HandleInput();
-        void Update(float deltaTime);
-        void Draw(float deltaTime);
+        void Init() override;
+        void HandleInput() override;
+        void Update(float deltaTime) override;
+        void Draw(float deltaTime) override;
 
     private:
         GameDataPtr _gameData;

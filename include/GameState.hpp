@@ -24,10 +24,10 @@ namespace BillyEngine
         GameState(GameDataPtr gameData);
         ~GameState();
 
-        void Init();
-        void HandleInput();
-        void Update(float deltaTime);
-        void Draw(float deltaTime);
+        void Init() override;
+        void HandleInput() override;
+        void Update(float deltaTime) override;
+        void Draw(float deltaTime) override;
 
     private:
         GameDataPtr _gameData;
@@ -46,7 +46,6 @@ namespace BillyEngine
         int _gameState;
         int _scoreGame;
 
-        //Didn't using this buffer object cuz already define on AssetsManager
         // Set sound buffers
         sf::SoundBuffer _hitSoundBuffer;
         sf::SoundBuffer _scorePointSoundBuffer;
