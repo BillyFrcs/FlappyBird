@@ -5,14 +5,6 @@
 #include "GameState.hpp"
 #include "MainMenuState.hpp"
 
-/* Didn't using this definition 
-#define SCALE_LAND1 0.7f
-#define SCALE_LAND2 1.0f
-
-#define SCALE_PIPE1 0.62f
-#define SCALE_PIPE2 0.90f
-*/
-
 BillyEngine::GameState::GameState(GameDataPtr gameData) : _gameData(gameData)
 {
 }
@@ -100,12 +92,6 @@ void BillyEngine::GameState::HandleInput()
 
           if (_gameData->input.IsSpriteClicked(_background, sf::Mouse::Left, _gameData->window))
           {
-               /* Didn't using it at the moment
-               _pipePtr->SpawnInvisiblePipe();
-               _pipePtr->SpawnBottomPipe();
-               _pipePtr->SpawnTopPipe();
-               */
-
                if (GameStates::E_GameOver != _gameState)
                {
                     _gameState = GameStates::E_PlayingGame;
