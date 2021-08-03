@@ -6,7 +6,7 @@
 
 Flappy Bird game made with C++/SFML library framework.
 
-## Getting started
+## Getting Started
 
 Clone or download this repository, and open in your favorite IDE or text editor (Recommended using Visual studio code).
 
@@ -14,7 +14,7 @@ Clone or download this repository, and open in your favorite IDE or text editor 
 git clone https://github.com/BillyFrcs/FlappyBird.git
 ```
 
-## Run and play Flappy Bird
+## Run And Play Flappy Bird
 
 - Create new "bin" folder without using quotation marks for create binary or executable file, then open new terminal on text editor or IDE.
 - First type `make` on terminal, second type `bin/FlappyBird` then compiled it that's it, to debug you just Run and Debug(f5) and to build you can run Build & Run(f7).
@@ -26,7 +26,7 @@ Copy and paste the syntax below on your terminal to install SFML library if you'
 sudo apt-get install libsfml-dev
 ```
 
-## Instructions game
+## Instructions Game
 
 Just tap - tap the bird and avoid to crash with the pipes and fall to the ground, then you get the score and the game will restart.
 
