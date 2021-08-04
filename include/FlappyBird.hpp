@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Game.hpp"
-
 #ifndef FLAPPY__BIRD
+
+#include "Game.hpp"
 
 /*
  * Didn't using splash time at this moment.
