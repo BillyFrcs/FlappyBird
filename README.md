@@ -2,7 +2,7 @@
 
 ![Flappy Bird GamePlay](https://github.com/BillyFrcs/FlappyBird/blob/master/assets/example/Image1.png)
 
-![Flappy Bird GamePlay](https://github.com/BillyFrcs/FlappyBird/blob/master/assets/example/Image2.png)
+![Flappy Bird GamePlay](https://github.com/BillyFrcs/FlappyBird/blob/master/assets/example/image2.png)
 
 Flappy Bird game made with C++/SFML library framework.
 
@@ -29,7 +29,5 @@ sudo apt-get install libsfml-dev
 ## Instructions Game
 
 Just tap - tap the bird and avoid to crash with the pipes and fall to the ground, then you get the score and the game will restart.
-
-> Note: This game only available and running on Linux 😃 but if you want to running on Windows or MacOS, you can do it, just follow this [tutorial](https://www.sfml-dev.org/tutorials/2.5/).
 
 <i>© Billy Franscois</i>
