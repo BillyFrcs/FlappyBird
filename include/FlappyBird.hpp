@@ -72,10 +72,10 @@ constexpr auto LAND_FILEPATH = "assets/textures/game-states/Land.png";
 /////////////////////////////////////////////////////////////////////
 
 // Birds filepath //////////////////////////////////////////////////
-#define BIRD_FRAME1_FILEPATH "assets/textures/birds/frameBird-1.png"
-#define BIRD_FRAME2_FILEPATH "assets/textures/birds/frameBird-2.png"
-#define BIRD_FRAME3_FILEPATH "assets/textures/birds/frameBird-3.png"
-#define BIRD_FRAME4_FILEPATH "assets/textures/birds/frameBird-4.png"
+#define BIRD_FRAME1_FILEPATH "assets/textures/birds/frame-1.png"
+#define BIRD_FRAME2_FILEPATH "assets/textures/birds/frame-2.png"
+#define BIRD_FRAME3_FILEPATH "assets/textures/birds/frame-3.png"
+#define BIRD_FRAME4_FILEPATH "assets/textures/birds/frame-4.png"
 ////////////////////////////////////////////////////////////////////
 
 // Fonts filepath /////////////////////////////////////////////////
