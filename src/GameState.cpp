@@ -18,15 +18,15 @@ void BillyEngine::GameState::Init()
      // Set sound effect buffer
      if (!_hitSoundBuffer.loadFromFile(HIT_SOUND_FILEPATH))
      {
-          std::cout << "Error load hit sound buffer\n";
+          throw("Error load hit sound buffer");
      }
      if (!_scorePointSoundBuffer.loadFromFile(SCORE_POINT_SOUND_FILEPATH))
      {
-          std::cout << "Error load score point sound buffer\n";
+          throw("Error load score point sound buffer");
      }
      if (!_wingSoundBuffer.loadFromFile(WING_SOUND_FILEPATH))
      {
-          std::cout << "Error load wing sound buffer\n";
+          throw("Error load wing sound buffer");
      }
 
      _hitSound.setBuffer(_hitSoundBuffer);
