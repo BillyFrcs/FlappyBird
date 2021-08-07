@@ -49,6 +49,7 @@ void BillyEngine::StateMachine::ProcessStateChanges()
                     this->_states.top()->Pause();
                }
           }
+          
           this->_states.push(std::move(this->_newState));
           this->_states.top()->Init();
 

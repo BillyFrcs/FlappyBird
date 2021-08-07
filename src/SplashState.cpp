@@ -36,8 +36,7 @@ void BillyEngine::SplashState::HandleInput()
 
 void BillyEngine::SplashState::Update(float deltaTime)
 {
-     /* 
-      * Didn't using this splash screen for now.
+     /* Didn't using this splash screen for right now.
      if (_clock.getElapsedTime().asSeconds() > SPLASH_STATE_TIME)
      {
           // Switch to main menu

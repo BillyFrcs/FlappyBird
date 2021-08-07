@@ -45,6 +45,7 @@ void BillyEngine::Bird::BirdAnimation(float deltaTime)
           {
                _birdAnimationIterator++;
           }
+
           else
           {
                _birdAnimationIterator = VALUE;
