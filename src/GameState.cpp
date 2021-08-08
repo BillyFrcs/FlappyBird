@@ -206,4 +206,8 @@ void BillyEngine::GameState::Draw(float deltaTime)
      _scorePtr->DrawScore(); // Draw the score
 
      _gameData->window.display();
+
+     sf::Time time = sf::seconds(deltaTime);
+
+     time.asMicroseconds();
 }

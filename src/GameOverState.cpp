@@ -143,6 +143,9 @@ void BillyEngine::GameOverState::HandleInput()
 
 void BillyEngine::GameOverState::Update(float deltaTime)
 {
+     sf::Time time = sf::seconds(deltaTime);
+
+     time.asMicroseconds();
 }
 
 void BillyEngine::GameOverState::Draw(float deltaTime)
@@ -158,4 +161,8 @@ void BillyEngine::GameOverState::Draw(float deltaTime)
      _gameData->window.draw(_medalsGame);
 
      _gameData->window.display();
+
+     sf::Time time = sf::seconds(deltaTime);
+
+     time.asMicroseconds();
 }

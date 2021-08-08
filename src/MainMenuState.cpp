@@ -65,6 +65,9 @@ void BillyEngine::MainMenuState::HandleInput()
 
 void BillyEngine::MainMenuState::Update(float deltaTime)
 {
+     sf::Time time = sf::seconds(deltaTime);
+
+     time.asMicroseconds();
 }
 
 void BillyEngine::MainMenuState::Draw(float deltaTime)
@@ -76,4 +79,8 @@ void BillyEngine::MainMenuState::Draw(float deltaTime)
      _gameData->window.draw(_playButton);
 
      _gameData->window.display();
+
+     sf::Time time = sf::seconds(deltaTime);
+
+     time.asMicroseconds();
 }

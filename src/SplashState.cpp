@@ -46,6 +46,10 @@ void BillyEngine::SplashState::Update(float deltaTime)
 
      // Move this method inside the if statement to display the splash screen
      _gameData->machine.AddState(StatePtr(new MainMenuState(_gameData)), true);
+
+     sf::Time time = sf::seconds(deltaTime);
+
+     time.asMicroseconds();
 }
 
 void BillyEngine::SplashState::Draw(float deltaTime)
@@ -55,4 +59,8 @@ void BillyEngine::SplashState::Draw(float deltaTime)
      _gameData->window.draw(_background);
 
      _gameData->window.display();
+
+     sf::Time time = sf::seconds(deltaTime);
+
+     time.asMicroseconds();
 }
