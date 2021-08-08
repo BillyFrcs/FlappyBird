@@ -1,5 +1,5 @@
 # Binary folder and file executable
 bin/
 
-# Ignore .txt file for high scores
+# Text file
 *.txt
