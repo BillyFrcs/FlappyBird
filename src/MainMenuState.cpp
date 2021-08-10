@@ -17,13 +17,13 @@ void BillyEngine::MainMenuState::Init()
 {
      // Load textures
      _gameData->assets.LoadTexture("Main Menu Background", MAIN_MENU_BACKGROUND_GAME_PATH);
-     _gameData->assets.LoadTexture("Title Game", GAME_TITLE_PATH);
-     _gameData->assets.LoadTexture("Play Button Game", PLAY_BUTTON_GAME_FILEPATH);
+     _gameData->assets.LoadTexture("Title Game", GAME_TITLE_FILEPATH);
+     _gameData->assets.LoadTexture("Start Button Game", START_BUTTON_FILEPATH);
 
      // Load sound
      if (!_startGameSoundBuffer.loadFromFile(START_GAME_SOUND_FIlEPATH))
      {
-          std::cout << "Error loading start sound file" << std::endl;
+          throw("Error loading start sound file");
      }
 
      _startGameSound.setBuffer(_startGameSoundBuffer);
@@ -32,14 +32,15 @@ void BillyEngine::MainMenuState::Init()
 
      _background.setTexture(this->_gameData->assets.GetTexture("Main Menu Background"));
      _title.setTexture(this->_gameData->assets.GetTexture("Title Game"));
-     _playButton.setTexture(this->_gameData->assets.GetTexture("Play Button Game"));
+     _playButton.setTexture(this->_gameData->assets.GetTexture("Start Button Game"));
 
      // Set sound buffer
      // _startGameSound.setBuffer(this->_gameData->assets.GetSoundBuffer("Start Game Sound"));
 
      // Set position main menu x and y
      _title.setPosition((E_Screen_Width / 2) - (_title.getLocalBounds().width / 2), _title.getLocalBounds().height / 2);
-     _playButton.setPosition((E_Screen_Width / 2) - (_playButton.getLocalBounds().width / 2), (E_Screen_Height / 2) - (_playButton.getLocalBounds().height / 2));
+     _playButton.setPosition((E_Screen_Width / 3) - (_playButton.getLocalBounds().width / 3), (E_Screen_Height / 2) - (_playButton.getLocalBounds().height / 2));
+     _playButton.setScale(sf::Vector2f(1.5f, 1.5f));
 }
 
 void BillyEngine::MainMenuState::HandleInput()

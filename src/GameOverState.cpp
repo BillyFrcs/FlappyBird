@@ -45,6 +45,7 @@ void BillyEngine::GameOverState::Init()
           {
                _highScoreGame = _scoreGame;
           }
+
           writeFileHighScore << _highScoreGame;
      }
 
@@ -53,6 +54,7 @@ void BillyEngine::GameOverState::Init()
      // Load texture
      _gameData->assets.LoadTexture("Game Over Background", GAME_OVER_BACKGROUND_FILEPATH);
      _gameData->assets.LoadTexture("Game Over Title", GAME_OVER_TITLE_FILEPATH);
+     _gameData->assets.LoadTexture("Play Game Button", PLAY_BUTTON_GAME_FILEPATH);
      _gameData->assets.LoadTexture("Game Over", GAME_OVER_FILEPATH);
      _gameData->assets.LoadTexture("Bronze Medal", BRONZE_MEDAL_FILEPATH);
      _gameData->assets.LoadTexture("Silver Medal", SILVER_MEDAL_FILEPATH);
@@ -73,7 +75,7 @@ void BillyEngine::GameOverState::Init()
      _background.setTexture(this->_gameData->assets.GetTexture("Game Over Background"));
      _gameOverTitle.setTexture(this->_gameData->assets.GetTexture("Game Over Title"));
      _gameOverContainer.setTexture(this->_gameData->assets.GetTexture("Game Over"));
-     _retryButtonPlayGame.setTexture(this->_gameData->assets.GetTexture("Play Button Game"));
+     _retryButtonPlayGame.setTexture(this->_gameData->assets.GetTexture("Play Game Button"));
 
      // Set sound buffer retry game
      // _soundRetryGame.setBuffer(this->_gameData->assets.GetSoundBuffer("Sound Retry Game"));

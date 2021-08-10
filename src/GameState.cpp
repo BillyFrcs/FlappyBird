@@ -18,15 +18,15 @@ void BillyEngine::GameState::Init()
      // Set sound effect buffer
      if (!_hitSoundBuffer.loadFromFile(HIT_SOUND_FILEPATH))
      {
-          throw("Error load hit sound buffer");
+          throw("Error to load hit sound buffer");
      }
      if (!_scorePointSoundBuffer.loadFromFile(SCORE_POINT_SOUND_FILEPATH))
      {
-          throw("Error load score point sound buffer");
+          throw("Error to load score point sound buffer");
      }
      if (!_wingSoundBuffer.loadFromFile(WING_SOUND_FILEPATH))
      {
-          throw("Error load wing sound buffer");
+          throw("Error to load wing sound buffer");
      }
 
      _hitSound.setBuffer(_hitSoundBuffer);
@@ -201,7 +201,7 @@ void BillyEngine::GameState::Draw(float deltaTime)
 
      _pipePtr->DrawPipes();  // Draw the pipes up and down on the screen
      _landPtr->DrawLand();   // Draw the land on the screen
-     _birdPtr->DrawBird();   // Draw bird
+     _birdPtr->DrawBird();   // Draw the bird
      _flashPtr->DrawFlash(); // Draw the flash
      _scorePtr->DrawScore(); // Draw the score
 

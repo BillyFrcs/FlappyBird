@@ -57,7 +57,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 // Title and button filepath /////////////////////////////////////////////////
-#define GAME_TITLE_PATH "assets/textures/game-states/TitleGame.png"
+#define GAME_TITLE_FILEPATH "assets/textures/game-states/TitleGame.png"
+#define START_BUTTON_FILEPATH "assets/textures/game-states/start.png"
 #define PLAY_BUTTON_GAME_FILEPATH "assets/textures/game-states/PlayButton.png"
 //////////////////////////////////////////////////////////////////////////////
 
