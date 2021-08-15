@@ -5,7 +5,7 @@
 int main()
 {
 #if defined(_DEBUG)
-	std::cout << "Billy | Flappy Bird Game" << std::endl;
+	std::cout << "Billy Games | Flappy Bird" << std::endl;
 #endif
 
 	BillyEngine::Game(WindowScreenSize::E_Screen_Width, WindowScreenSize::E_Screen_Height, "Flappy Bird");
