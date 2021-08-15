@@ -1,38 +1,38 @@
 #pragma once
 
-#ifndef STATE_MACHINE
+#ifndef STATE_MACHINE_HPP
 
-#include <memory>
-#include <stack>
+	#include <memory>
+	#include <stack>
 
-#include "State.hpp"
+	#include "State.hpp"
 
 namespace BillyEngine
 {
-    typedef std::unique_ptr<State> StatePtr;
+typedef std::unique_ptr<State> StatePtr;
 
-    class StateMachine
-    {
-    public:
-        StateMachine();
-        ~StateMachine();
+class StateMachine
+{
+public:
+	StateMachine();
+	~StateMachine();
 
-        // States machine methods
-        void AddState(StatePtr newStatePtr, bool isReplacing = true);
-        void RemoveState();
+	// States machine methods
+	void AddState(StatePtr newStatePtr, bool isReplacing = true);
+	void RemoveState();
 
-        void ProcessStateChanges();
+	void ProcessStateChanges();
 
-        StatePtr &GetActiveState();
+	StatePtr& GetActiveState();
 
-    private:
-        std::stack<StatePtr> _states;
-        StatePtr _newState;
+private:
+	std::stack<StatePtr> _states;
+	StatePtr _newState;
 
-        bool _isAdding;
-        bool _isReplacing;
-        bool _isRemoving;
-    };
+	bool _isAdding;
+	bool _isReplacing;
+	bool _isRemoving;
+};
 }
 
 #endif

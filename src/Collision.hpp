@@ -1,23 +1,23 @@
 #pragma once
 
-#ifndef COLLISION_HANDLING
+#ifndef COLLISION_HANDLING_HPP
 
-#include <SFML/Graphics.hpp>
-#include <SFML/Graphics/Sprite.hpp>
+	#include <SFML/Graphics.hpp>
+	#include <SFML/Graphics/Sprite.hpp>
 
 namespace BillyEngine
 {
-    class Collision
-    {
-    public:
-        Collision();
-        ~Collision();
+class Collision
+{
+public:
+	Collision();
+	~Collision();
 
-        // Didn't using this collision at the moment
-        // bool IsCheckSpriteCollision(sf::Sprite spriteParam1, sf::Sprite spriteParam2);
+	// Didn't using this collision at the moment
+	// bool IsCheckSpriteCollision(sf::Sprite spriteParam1, sf::Sprite spriteParam2);
 
-        bool IsCheckSpriteCollision(sf::Sprite spriteCollision1, float scaleCollision1, sf::Sprite spriteCollision2, float scaleCollision2);
-    };
+	bool IsCheckSpriteCollision(sf::Sprite spriteCollision1, float scaleCollision1, sf::Sprite spriteCollision2, float scaleCollision2);
+};
 }
 
 #endif

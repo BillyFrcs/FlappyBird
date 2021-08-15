@@ -1,31 +1,31 @@
 #pragma once
 
-#ifndef FLASH_SCREEN
+#ifndef FLASH_SCREEN_HPP
 
-#include <SFML/Graphics.hpp>
+	#include <SFML/Graphics.hpp>
 
-#include "FlappyBird.hpp"
-#include "Game.hpp"
+	#include "FlappyBird.hpp"
+	#include "Game.hpp"
 
 namespace BillyEngine
 {
-    // Flash white
-    class FlashScreen
-    {
-    public:
-        FlashScreen(GameDataPtr _gameData);
-        ~FlashScreen();
+// Flash white
+class FlashScreen
+{
+public:
+	FlashScreen(GameDataPtr _gameData);
+	~FlashScreen();
 
-        void ShowFlash(float deltaTime);
-        void DrawFlash();
+	void ShowFlash(float deltaTime);
+	void DrawFlash();
 
-    private:
-        GameDataPtr _gameData;
+private:
+	GameDataPtr _gameData;
 
-        sf::RectangleShape _shape;
+	sf::RectangleShape _shape;
 
-        bool _isFlashOn;
-    };
+	bool _isFlashOn;
+};
 }
 
 #endif
