@@ -79,9 +79,6 @@ void BillyEngine::GameOverState::Init()
 	_gameOverContainer.setTexture(this->_gameData->assets.GetTexture("Game Over"));
 	_retryButtonPlayGame.setTexture(this->_gameData->assets.GetTexture("Play Game Button"));
 
-	// Set sound buffer retry game
-	// _soundRetryGame.setBuffer(this->_gameData->assets.GetSoundBuffer("Sound Retry Game"));
-
 	// Set position game over
 	_gameOverContainer.setPosition((_gameData->window.getSize().x / 2 - _gameOverContainer.getGlobalBounds().width / 2), (_gameData->window.getSize().y / 2 - _gameOverContainer.getGlobalBounds().height / 2));
 	_gameOverTitle.setPosition((_gameData->window.getSize().x / 2) - (_gameOverTitle.getGlobalBounds().width / 2), _gameOverContainer.getPosition().y - (_gameOverTitle.getGlobalBounds().height * 1.2));

@@ -67,13 +67,10 @@ void BillyEngine::Pipes::MovePipes(float deltaTime)
           }
           else
           {
-               // sf::Vector2f position = _pipeSprites.at(i).getPosition();
-
                float movement = (PIPE_MOVEMENT_SPEED * deltaTime);
 
                _pipesSpriteVec.at(i).move(-movement, Y_POSITION);
           }
-          // std::cout << _pipeSprites.size() << std::endl;
      }
 
      // Scoring sprite pipes
@@ -85,13 +82,10 @@ void BillyEngine::Pipes::MovePipes(float deltaTime)
           }
           else
           {
-               // sf::Vector2f position = _pipeSprites.at(i).getPosition();
-
                float movement = (PIPE_MOVEMENT_SPEED * deltaTime);
 
                _scoringSpritePipesVec.at(i).move(-movement, Y_POSITION);
           }
-          // std::cout << _pipeSprites.size() << std::endl;
      }
 }
 
