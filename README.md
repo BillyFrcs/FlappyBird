@@ -20,8 +20,8 @@ git clone https://github.com/BillyFrcs/FlappyBird.git
 - Choose option to Debug or Release.
 - Please check this [Template](https://github.com/BillyFrcs/FlappyBird/tree/master/Template/README.md) for more details and setup this project.
 
+> Get the [SFML Template](https://github.com/andrew-r-king/sfml-vscode-boilerplate) for making game from scratch using Visual Studio Code.
+
 ## Instruction Game
 
 Just tap - tap the bird and avoid to crash with the pipes and fall to the ground, then you get the score and the game will restart.
-
-> Get the [SFML Template](https://github.com/andrew-r-king/sfml-vscode-boilerplate) for making game from scratch using Visual Studio Code.
