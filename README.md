@@ -8,7 +8,7 @@ Flappy Bird Game made with C++ and [SFML](https://www.sfml-dev.org/index.php) li
 
 ## Getting Started
 
-Clone or download this repository, and open in your favorite IDE or text editor (Recommended using Visual studio code).
+Clone or download this repository, and open in Visual Studio Code.
 
 ```
 git clone https://github.com/BillyFrcs/FlappyBird.git
