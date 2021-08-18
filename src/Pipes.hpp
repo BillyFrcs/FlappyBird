@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef PIPES_HPP
+	#define PIPES_HPP
 
 	#include <SFML/Graphics.hpp>
 	#include <SFML/Graphics/Sprite.hpp>
@@ -40,4 +41,4 @@ private:
 };
 }
 
-#endif
+#endif // PIPES_HPP

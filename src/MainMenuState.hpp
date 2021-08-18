@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef MAIN_MENU_STATE_HPP
+	#define MAIN_MENU_STATE_HPP
 
 	#include <SFML/Audio.hpp>
 	#include <SFML/Graphics.hpp>
@@ -34,4 +35,4 @@ private:
 };
 }
 
-#endif
+#endif // MAIN_MENU_STATE_HPP

@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef LAND_HPP
+	#define LAND_HPP
 
 	#include <SFML/Graphics.hpp>
 	#include <SFML/Graphics/Sprite.hpp>
@@ -28,4 +29,4 @@ private:
 };
 }
 
-#endif
+#endif // LAND_HPP

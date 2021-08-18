@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef BIRD_HPP
+	#define BIRD_HPP
 
 	#include <SFML/Graphics.hpp>
 	#include <SFML/Graphics/Sprite.hpp>
@@ -41,4 +42,4 @@ private:
 };
 }
 
-#endif
+#endif // BIRD_HPP

@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef GAME_STATE_HPP
+	#define GAME_STATE_HPP
 
 	#include <SFML/Audio.hpp>
 	#include <SFML/Graphics.hpp>
@@ -58,4 +59,4 @@ private:
 };
 }
 
-#endif
+#endif // GAME_STATE_HPP

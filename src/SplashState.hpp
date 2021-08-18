@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef SPLASH_STATE_HPP
+	#define SPLASH_STATE_HPP
 
 	#include <SFML/Graphics.hpp>
 	#include <SFML/Graphics/Sprite.hpp>
@@ -30,4 +31,4 @@ private:
 };
 }
 
-#endif
+#endif // PLASH_STATE_HPP

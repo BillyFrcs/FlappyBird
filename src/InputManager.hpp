@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef INPUT_MANAGER_HPP
+#define INPUT_MANAGER_HPP
 
 	#include <SFML/Graphics.hpp>
 	#include <SFML/Graphics/RenderWindow.hpp>
@@ -20,4 +21,4 @@ public:
 };
 }
 
-#endif
+#endif // INPUT_MANAGER_HPP

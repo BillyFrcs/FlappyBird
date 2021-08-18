@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef STATE_HPP
+	#define STATE_HPP
 
 	#include <SFML/System/Time.hpp>
 
@@ -20,4 +21,4 @@ public:
 };
 }
 
-#endif
+#endif // STATE_HPP

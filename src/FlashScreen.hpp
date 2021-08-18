@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef FLASH_SCREEN_HPP
+	#define FLASH_SCREEN_HPP
 
 	#include <SFML/Graphics.hpp>
 
@@ -28,4 +29,4 @@ private:
 };
 }
 
-#endif
+#endif // FLASH_SCREEN_HPP

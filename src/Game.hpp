@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef GAME_HPP
+#define GAME_HPP
 
 	#include <SFML/Graphics.hpp>
 	#include <SFML/Graphics/RenderWindow.hpp>
@@ -48,4 +49,4 @@ private:
 };
 }
 
-#endif
+#endif // GAME_HPP

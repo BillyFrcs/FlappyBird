@@ -1,6 +1,7 @@
 #pragma once
 
-#ifndef COLLISION_HANDLING_HPP
+#ifndef COLLISION_HPP
+#define COLLISION_HPP
 
 	#include <SFML/Graphics.hpp>
 	#include <SFML/Graphics/Sprite.hpp>
@@ -17,4 +18,4 @@ public:
 };
 }
 
-#endif
+#endif // COLLISION_HPP

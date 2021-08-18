@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef ASSETS_MANAGER_HPP
+	#define ASSETS_MANAGER_HPP
 
 	#include <SFML/Audio.hpp>
 	#include <SFML/Graphics.hpp>
@@ -31,4 +32,4 @@ private:
 };
 }
 
-#endif
+#endif // ASSETS_MANAGER_HPP

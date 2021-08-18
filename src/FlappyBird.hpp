@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef FLAPPY_BIRD_HPP
+	#define FLAPPY_BIRD_HPP
 
 	#include "Game.hpp"
 
@@ -116,4 +117,4 @@ enum GameStates
 };
 ///////////////////
 
-#endif
+#endif // FLAPPY_BIRD_HPP

@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef GAME_OVER_STATE_HPP
+	#define GAME_OVER_STATE_HPP
 
 	#include <SFML/Audio.hpp>
 	#include <SFML/Graphics.hpp>
@@ -45,4 +46,4 @@ private:
 };
 }
 
-#endif
+#endif // GAME_OVER_STATE_HPP

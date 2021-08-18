@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef STATE_MACHINE_HPP
+#define STATE_MACHINE_HPP
 
 	#include <memory>
 	#include <stack>
@@ -35,4 +36,4 @@ private:
 };
 }
 
-#endif
+#endif // STATE_MACHINE_HPP

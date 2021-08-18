@@ -1,6 +1,7 @@
 #pragma once
 
 #ifndef SCORE_GAME_HPP
+#define SCORE_GAME_HPP
 
 	#include <SFML/Graphics.hpp>
 	#include <SFML/Graphics/Text.hpp>
@@ -28,4 +29,4 @@ private:
 };
 }
 
-#endif
+#endif // SCORE_GAME_HPP
