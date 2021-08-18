@@ -18,9 +18,9 @@ git clone https://github.com/BillyFrcs/FlappyBird.git
 
 - Just press "ctrl + shift + B" to build and run the game.
 - Choose option to Debug or Release.
-- Please check this [README](https://github.com/BillyFrcs/FlappyBird/tree/master/Template/README.md) for more details to setup and configuration this project.
+- Please check this [README](https://github.com/BillyFrcs/FlappyBird/blob/master/Template/README.md) for more details to setup and configuration this project.
 
-> Get the [SFML Template](https://github.com/andrew-r-king/sfml-vscode-boilerplate) for making game from scratch using Visual Studio Code.
+> Get the [SFML Template](https://github.com/andrew-r-king/sfml-vscode-boilerplate) for making games from scratch using Visual Studio Code.
 
 ## Instruction Game
 
