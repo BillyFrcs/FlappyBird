@@ -11,8 +11,6 @@ BillyEngine::Bird::Bird(GameDataPtr gameData) : _gameData(gameData)
      _birdAnimationFrames.push_back(_gameData->assets.GetTexture("Bird Frame 3"));
      _birdAnimationFrames.push_back(_gameData->assets.GetTexture("Bird Frame 4"));
 
-     // _birdSprite.setTexture(_gameData->assets.GetTexture("Bird Frame 1"));
-
      _birdSprite.setTexture(_birdAnimationFrames.at(_birdAnimationIterator));
 
      _birdSprite.setPosition((_gameData->window.getSize().x / 4) - (_birdSprite.getGlobalBounds().width / 2), (_gameData->window.getSize().y / 2) - (_birdSprite.getGlobalBounds().height / 2));
