@@ -1,10 +1,6 @@
 <h1>Flappy Bird</h1>
 
-![Flappy Bird GamePlay](https://github.com/BillyFrcs/FlappyBird/blob/master/assets/example/image2.png)
-
-<!--
-![Flappy Bird GamePlay](https://github.com/BillyFrcs/FlappyBird/blob/master/assets/example/Image1.png)
--->
+![Flappy Bird GamePlay](https://github.com/BillyFrcs/FlappyBird/blob/master/assets/example/FlappyBird.png)
 
 Flappy Bird Game made with C++ and [SFML](https://www.sfml-dev.org/index.php) library framework.
 
