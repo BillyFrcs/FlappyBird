@@ -2,7 +2,7 @@
 
 ![Flappy Bird GamePlay](https://github.com/BillyFrcs/FlappyBird/blob/master/assets/example/FlappyBird.png)
 
-Flappy Bird Game made with C++ and [SFML](https://www.sfml-dev.org/index.php) library framework.
+Flappy Bird Game made with C++ and [SFML](https://www.sfml-dev.org/index.php) library.
 
 ## Getting Started
 
@@ -20,7 +20,3 @@ git clone https://github.com/BillyFrcs/FlappyBird.git
 - Please check this [README](https://github.com/BillyFrcs/FlappyBird/blob/master/Template/README.md) for more details to setup and configuration this project.
 
 > Get the [SFML Template](https://github.com/andrew-r-king/sfml-vscode-boilerplate) for making games from scratch using Visual Studio Code.
-
-## Instruction Game
-
-Just tap - tap the bird and avoid to crash with the pipes and fall to the ground, then you get the score and the game will restart.
