@@ -1,4 +1,4 @@
-<h1>Flappy Bird</h1>
+<h1 align="center">Flappy Bird</h1>
 
 ![Flappy Bird GamePlay](https://github.com/BillyFrcs/FlappyBird/blob/master/assets/example/FlappyBird.png)
 
