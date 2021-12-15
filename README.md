@@ -1,6 +1,6 @@
 <h1 align="center">Flappy Bird</h1>
 
-![Flappy Bird GamePlay](https://github.com/BillyFrcs/FlappyBird/blob/master/assets/example/FlappyBird.png)
+![Flappy Bird GamePlay](https://github.com/BillyFrcs/FlappyBird/blob/master/assets/example/Gif/FlappyBird.gif)
 
 Flappy Bird Game made with C++ and [SFML](https://www.sfml-dev.org/index.php) library.
 
